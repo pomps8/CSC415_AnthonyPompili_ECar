@@ -21,5 +21,9 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
+        //takes us back to login screen
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
 }
 
