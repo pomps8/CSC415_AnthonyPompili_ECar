@@ -5,6 +5,8 @@
 //  Created by Anthony Pompili on 11/10/17.
 //  Copyright © 2017 Anthony Pompili. All rights reserved.
 //
+// PersonalCar.swift is a subclass of the Car.swift class, and acts as the
+// the personal data for a user
 
 import Foundation
 import UIKit
@@ -15,6 +17,7 @@ class PersonalCar : Car {
     private var gasConsumed: Int
     private var milesDriven: Int
     
+    //basic init func
     init(name: String, year: Int, mpg: Int, description: String, carImage: UIImage, safetyRating: Int,
                   personalMpg: Int, footprint: Int, gasConsumed: Int, milesDriven: Int) {
         

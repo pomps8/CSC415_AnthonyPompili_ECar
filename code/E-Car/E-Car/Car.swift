@@ -5,7 +5,8 @@
 //  Created by Anthony Pompili on 11/10/17.
 //  Copyright © 2017 Anthony Pompili. All rights reserved.
 //
-
+// This class is the structure for any car that is saved in the application
+// Used also for the PersonalCar.swift class as its parent class
 import Foundation
 import UIKit
 
@@ -17,6 +18,7 @@ class Car {
     private var carImage: UIImage?
     private var safetyRating: Int = 0
     
+    //basic init func
     init(name: String, year: Int, mpg: Int, description: String, carImage: UIImage, safetyRating: Int){
         self.name = name
         self.year = year
