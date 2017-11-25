@@ -9,10 +9,15 @@
 import UIKit
 
 class CarYearsTableViewController: UITableViewController {
-
+    var allYearsToDisplay = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //fill array of the years to display with the years 2000 -> 2018
+        for i in 2000 ... 2018 {
+            allYearsToDisplay.append(i)
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

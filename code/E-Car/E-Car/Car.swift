@@ -88,9 +88,26 @@ class Car {
         } else if brand == "\"Ferrari North America"{
             self.brand = "Ferrari"
             return
-        } else if brand == "\"Mitsubishi Motors Corporation" {
+        } else if brand == "Mitsubishi Motors Corporation" {
             self.brand = "Mitsubishi"
             return
+        } else if brand == "HYUNDAI MOTOR COMPANY" {
+            self.brand = "Hyundai"
+            return
+        } else if brand == "KIA MOTORS CORPORATION" {
+            self.brand = "KIA"
+            return
+        } else if brand == "HYUNDAI MOTOR COMPANY" {
+            self.brand = "Hyundai"
+            return
+        } else if brand == "HYUNDAI MOTOR COMPANY" {
+            self.brand = "Hyundai"
+            return
+        } else if brand == "Aston Martin Lagonda Ltd" {
+            self.brand = "Aston Martin"
+            return
+        } else if brand == "Rolls-Royce Motor Cars Limited" {
+            self.brand = "Rolls-Royce"
         }
         self.brand = brand
     }

@@ -11,7 +11,7 @@ import UIKit
 
 
 class ViewController: UIViewController {
-
+    var uniqueBrands = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,11 +26,15 @@ class ViewController: UIViewController {
                 if columns[3] != "" || columns[0] != "" || columns[9] != "" || columns[10] != "" || columns[11] != "" || columns[8] != "" || columns[2] != "" || columns[7] != ""{
                     myCar = Car.init(name: columns[3], year: columns[0], mpgCity: columns[9], mpgHighway: columns[10], mpgAvg: columns[11], transmission: columns[8], brand: columns[2], cylinder: columns[7])
                     print(myCar.toString())
+                    if !uniqueBrands.contains(myCar.getBrand()){
+                        uniqueBrands.append(myCar.getBrand())
+                    }
                 }
                 
             }
             start = 1
         }
+        print(uniqueBrands)
         //print(csvRows[10])
         //print(csvRows[1][1])
         
