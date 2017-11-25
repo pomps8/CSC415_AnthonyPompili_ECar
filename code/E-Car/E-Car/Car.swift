@@ -12,20 +12,17 @@ import UIKit
 
 class Car {
     private var name: String = ""
-    private var year: Int = 0
-    private var mpg: Int = 0
-    private var description: String = ""
-    private var carImage: UIImage?
-    private var safetyRating: Int = 0
+    private var year: String = ""
+    private var mpgCity: String = ""
+    private var mpgHighway: String = ""
+    private var mpgAvg: String = ""
+    private var transmission: String = ""
+    private var brand: String = ""
+    private var cylinder: String = ""
     
     //basic init func
-    init(name: String, year: Int, mpg: Int, description: String, carImage: UIImage, safetyRating: Int){
-        self.name = name
-        self.year = year
-        self.mpg = mpg
-        self.description = description
-        self.carImage = carImage
-        self.safetyRating = safetyRating
+    init(){
+        
     }
     
     func setName(name: String){
@@ -36,43 +33,59 @@ class Car {
         return name
     }
     
-    func setYear(year: Int) {
+    func setYear(year: String) {
         self.year = year
     }
     
-    func getYear() -> Int {
+    func getYear() -> String {
         return year
     }
     
-    func setMpg(mpg: Int) {
-        self.mpg = mpg
+    func setMpgCity(mpgCity: String) {
+        self.mpgCity = mpgCity
     }
     
-    func getMpg() -> Int {
-        return mpg
+    func getMpgCity() -> String {
+        return mpgCity
     }
     
-    func setDescription(description: String){
-        self.description = description
+    func setMpgHighway(mpgHighway: String) {
+        self.mpgHighway = mpgHighway
     }
     
-    func getDescription() -> String {
-        return description
+    func getMpgHighway() -> String {
+        return mpgHighway
     }
     
-    func setCarImage(carImage: UIImage){
-        self.carImage = carImage
+    func setMpgAvg(mpgAvg: String) {
+        self.mpgAvg = mpgAvg
     }
     
-    func getCarImage() -> UIImage {
-        return carImage!
+    func getMpgAvg() -> String {
+        return mpgAvg
     }
     
-    func setSafetyRating(safetyRating: Int){
-        self.safetyRating = safetyRating
+    func setTransmission(transmission: String) {
+        self.transmission = transmission
     }
     
-    func getSafetyRating() -> Int {
-        return safetyRating
+    func getTransmission() -> String {
+        return transmission
+    }
+    
+    func setBrand(brand: String) {
+        self.brand = brand
+    }
+    
+    func getBrand() -> String {
+        return brand
+    }
+    
+    func setCylinder(cylinder: String) {
+        self.cylinder = cylinder
+    }
+    
+    func getCylinder() -> String {
+        return cylinder
     }
 }

@@ -18,18 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainScreenLogo" translatesAutoresizingMaskIntoConstraints="NO" id="mih-6r-PMK">
-                                <rect key="frame" x="67" y="85" width="240" height="128"/>
+                                <rect key="frame" x="67" y="85" width="241" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="O4g-JI-OMq"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smi-dr-ljD">
-                                <rect key="frame" x="145" y="594" width="84" height="53"/>
+                                <rect key="frame" x="116" y="594" width="142" height="53"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="WiR-0I-Yyb"/>
+                                    <constraint firstAttribute="height" constant="53" id="q93-zd-be8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="More Info">
                                     <color key="titleColor" red="0.42352941176470588" green="0.51372549019607838" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -39,12 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.78431372549019607" green="0.83137254901960778" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Smi-dr-ljD" firstAttribute="centerX" secondItem="y2N-Dl-Ul7" secondAttribute="centerX" id="2di-Gm-2tU"/>
                             <constraint firstItem="mih-6r-PMK" firstAttribute="leading" secondItem="bum-Ae-fVI" secondAttribute="leading" constant="67" id="3W7-22-p0t"/>
-                            <constraint firstAttribute="bottom" secondItem="Smi-dr-ljD" secondAttribute="bottom" constant="20" symbolic="YES" id="Cdg-Dk-OIV"/>
-                            <constraint firstItem="mih-6r-PMK" firstAttribute="centerX" secondItem="Smi-dr-ljD" secondAttribute="centerX" id="Wxs-6k-2yI"/>
-                            <constraint firstItem="Smi-dr-ljD" firstAttribute="centerX" secondItem="y2N-Dl-Ul7" secondAttribute="centerX" id="XPD-d3-d2E"/>
-                            <constraint firstItem="Smi-dr-ljD" firstAttribute="leading" secondItem="bum-Ae-fVI" secondAttribute="leading" constant="145" id="hk1-HB-cDZ"/>
+                            <constraint firstItem="Smi-dr-ljD" firstAttribute="centerX" secondItem="mih-6r-PMK" secondAttribute="centerX" id="4Pm-U5-8dL"/>
+                            <constraint firstAttribute="bottom" secondItem="Smi-dr-ljD" secondAttribute="bottom" constant="20" symbolic="YES" id="J44-CS-ylX"/>
                             <constraint firstItem="mih-6r-PMK" firstAttribute="top" secondItem="bum-Ae-fVI" secondAttribute="top" constant="65" id="i5V-d5-qy3"/>
+                            <constraint firstItem="Smi-dr-ljD" firstAttribute="leading" secondItem="bum-Ae-fVI" secondAttribute="leading" constant="116" id="is9-71-Tut"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bum-Ae-fVI"/>
                     </view>
