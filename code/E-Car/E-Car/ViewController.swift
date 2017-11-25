@@ -4,7 +4,8 @@
 //
 //  Created by Anthony Pompili on 11/10/17.
 //  Copyright © 2017 Anthony Pompili. All rights reserved.
-//test test, more tests
+//
+// Loaded when "More" is selected from the initial view controller
 
 import UIKit
 
@@ -18,6 +19,18 @@ class ViewController: UIViewController {
         var data = readDataFromCSV(fileName: "2018CarData", fileType: ".csv")
         data = cleanRows(file: data!)
         let csvRows = csv(data: data!)
+        var myCar: Car
+        var start = 0 //used to skip the first row of the table, which is the column headers
+        for columns in csvRows {
+            if start != 0 {
+                if columns[3] != "" || columns[0] != "" || columns[9] != "" || columns[10] != "" || columns[11] != "" || columns[8] != "" || columns[2] != "" || columns[7] != ""{
+                    myCar = Car.init(name: columns[3], year: columns[0], mpgCity: columns[9], mpgHighway: columns[10], mpgAvg: columns[11], transmission: columns[8], brand: columns[2], cylinder: columns[7])
+                    print(myCar.toString())
+                }
+                
+            }
+            start = 1
+        }
         //print(csvRows[10])
         //print(csvRows[1][1])
         
@@ -65,7 +78,6 @@ class ViewController: UIViewController {
         for row in rows {
             let columns = row.components(separatedBy: ",")
             result.append(columns)
-            print(columns)
         }
         
         return result

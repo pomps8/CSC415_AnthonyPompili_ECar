@@ -12,21 +12,19 @@ import Foundation
 import UIKit
 
 class PersonalCar : Car {
+    /*
     private var personalMpg: Int
     private var footprint: Int
     private var gasConsumed: Int
     private var milesDriven: Int
     
     //basic init func
-    init(name: String, year: Int, mpg: Int, description: String, carImage: UIImage, safetyRating: Int,
-                  personalMpg: Int, footprint: Int, gasConsumed: Int, milesDriven: Int) {
-        
+    init(name: String, year: String, mpgCity: String, mpgHighway: String, mpgAvg: String, transmission: String, brand: String, cylinder: String, personalMpg: Int, footprint: Int, gasConsumed: Int, milesDriven: Int) {
+        super.init(name: name, year: year, mpgCity: mpgCity, mpgHighway: mpgHighway, mpgAvg: mpgAvg, transmission: transmission, brand: brand, cylinder: cylinder)
         self.personalMpg = personalMpg
         self.footprint = footprint
         self.gasConsumed = gasConsumed
         self.milesDriven = milesDriven
-        super.init(name: name, year: year, mpg: mpg, description: description, carImage: carImage, safetyRating: safetyRating)
-        
     }
     
     func setPersonalMpg(personalMpg: Int){
@@ -60,4 +58,5 @@ class PersonalCar : Car {
     func getMilesDriven() -> Int {
         return milesDriven
     }
+ */
 }

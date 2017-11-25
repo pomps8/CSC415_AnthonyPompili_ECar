@@ -22,6 +22,7 @@
 		92B4F31D1FB59092006653D6 /* E_CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B4F31C1FB59092006653D6 /* E_CarTests.swift */; };
 		92B4F3281FB59093006653D6 /* E_CarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B4F3271FB59093006653D6 /* E_CarUITests.swift */; };
 		92C0BE0D1FC8E1CA006991B9 /* 2018CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */; };
+		92C0BE0F1FC91A9B006991B9 /* CarYearsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C0BE0E1FC91A9B006991B9 /* CarYearsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		92B4F3271FB59093006653D6 /* E_CarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_CarUITests.swift; sourceTree = "<group>"; };
 		92B4F3291FB59093006653D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2018CarData.csv; sourceTree = "<group>"; };
+		92C0BE0E1FC91A9B006991B9 /* CarYearsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarYearsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,12 +122,13 @@
 				92B4F3101FB59092006653D6 /* LaunchScreen.storyboard */,
 				92B4F3131FB59092006653D6 /* Info.plist */,
 				92B197551FB68C2E00FB7DAF /* LoginViewController.swift */,
-				92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */,
 				92B197591FB698ED00FB7DAF /* MainMenuController.swift */,
 				92B1975B1FB6A0CD00FB7DAF /* CarList.swift */,
 				92B1975D1FB6A0EE00FB7DAF /* Car.swift */,
 				92B1975F1FB6A42200FB7DAF /* PersonalCar.swift */,
 				92B197611FB6A8E100FB7DAF /* Account.swift */,
+				92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */,
+				92C0BE0E1FC91A9B006991B9 /* CarYearsTableViewController.swift */,
 				92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */,
 			);
 			path = "E-Car";
@@ -289,6 +292,7 @@
 				92B4F30A1FB59092006653D6 /* ViewController.swift in Sources */,
 				92B197581FB68E3800FB7DAF /* ViewPersonalCarViewController.swift in Sources */,
 				92B4F3081FB59092006653D6 /* AppDelegate.swift in Sources */,
+				92C0BE0F1FC91A9B006991B9 /* CarYearsTableViewController.swift in Sources */,
 				92B197621FB6A8E100FB7DAF /* Account.swift in Sources */,
 				92B1975E1FB6A0EE00FB7DAF /* Car.swift in Sources */,
 				92B197601FB6A42200FB7DAF /* PersonalCar.swift in Sources */,

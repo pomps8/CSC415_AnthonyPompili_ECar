@@ -20,9 +20,16 @@ class Car {
     private var brand: String = ""
     private var cylinder: String = ""
     
-    //basic init func
-    init(){
-        
+    //basic init func to initialize car, data will be pulled from parser in viewDidLoad init file
+    init(name: String, year: String, mpgCity: String, mpgHighway: String, mpgAvg: String, transmission: String, brand: String, cylinder: String){
+        setName(name: name)
+        setYear(year: year)
+        setMpgCity(mpgCity: mpgCity)
+        setMpgHighway(mpgHighway: mpgHighway)
+        setMpgAvg(mpgAvg: mpgAvg)
+        setTransmission(transmission: transmission)
+        setBrand(brand: brand)
+        setCylinder(cylinder: cylinder)
     }
     
     func setName(name: String){
@@ -73,7 +80,18 @@ class Car {
         return transmission
     }
     
+    //Some brands have strange names in the list, use this to make their names simpler
     func setBrand(brand: String) {
+        if brand == "\"Volvo Cars of North America"{
+            self.brand = "Volvo"
+            return
+        } else if brand == "\"Ferrari North America"{
+            self.brand = "Ferrari"
+            return
+        } else if brand == "\"Mitsubishi Motors Corporation" {
+            self.brand = "Mitsubishi"
+            return
+        }
         self.brand = brand
     }
     
@@ -87,5 +105,9 @@ class Car {
     
     func getCylinder() -> String {
         return cylinder
+    }
+    
+    func toString() -> String {
+        return "brand: " + brand + ", name: " + name + ", year: " + year + ", tramission: " + transmission + ", cylinder: " + cylinder + ", MPGCity: " + mpgCity + ", MPGHighway" + mpgHighway + ", MPGAVG: " + mpgAvg
     }
 }
