@@ -2,22 +2,22 @@
 //  CarYearsTableViewController.swift
 //  E-Car
 //
-//  Created by Anthony Pompili on 11/24/17.
+//  Created by Anthony Pompili on 11/25/17.
 //  Copyright © 2017 Anthony Pompili. All rights reserved.
 //
 
 import UIKit
 
 class CarYearsTableViewController: UITableViewController {
-    var allYearsToDisplay = [Int]()
+
+    var years = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fill array of the years to display with the years 2000 -> 2018
-        for i in 2000 ... 2018 {
-            allYearsToDisplay.append(i)
-        }
         
+        for i in 2000 ... 2018 {
+            years.append(i)
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,24 +33,29 @@ class CarYearsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return years.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
+        let cellIdentifier = "CarYearsTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CarYearsTableViewCell else {
+            fatalError("The dequeued cell is not an instance of CarYearsTableViewCell")
+        }
+        print("here")
+        let year = years[indexPath.row]
         // Configure the cell...
-
+        cell.yearLabel.text = String(year)
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
