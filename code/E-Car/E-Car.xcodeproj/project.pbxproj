@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9294D4441FCA1DCE00AF86EA /* 2016CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43C1FCA1DCD00AF86EA /* 2016CarData.csv */; };
+		9294D4451FCA1DCE00AF86EA /* 2010CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43D1FCA1DCE00AF86EA /* 2010CarData.csv */; };
+		9294D4461FCA1DCE00AF86EA /* 2014CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43E1FCA1DCE00AF86EA /* 2014CarData.csv */; };
+		9294D4471FCA1DCE00AF86EA /* 2017CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43F1FCA1DCE00AF86EA /* 2017CarData.csv */; };
+		9294D4481FCA1DCE00AF86EA /* 2012CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D4401FCA1DCE00AF86EA /* 2012CarData.csv */; };
+		9294D4491FCA1DCE00AF86EA /* 2013CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D4411FCA1DCE00AF86EA /* 2013CarData.csv */; };
+		9294D44A1FCA1DCE00AF86EA /* 2011CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D4421FCA1DCE00AF86EA /* 2011CarData.csv */; };
+		9294D44B1FCA1DCE00AF86EA /* 2015CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */; };
 		92B197561FB68C2E00FB7DAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197551FB68C2E00FB7DAF /* LoginViewController.swift */; };
 		92B197581FB68E3800FB7DAF /* ViewPersonalCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */; };
 		92B1975A1FB698ED00FB7DAF /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197591FB698ED00FB7DAF /* MainMenuController.swift */; };
@@ -44,6 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9294D43C1FCA1DCD00AF86EA /* 2016CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2016CarData.csv; sourceTree = "<group>"; };
+		9294D43D1FCA1DCE00AF86EA /* 2010CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2010CarData.csv; sourceTree = "<group>"; };
+		9294D43E1FCA1DCE00AF86EA /* 2014CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2014CarData.csv; sourceTree = "<group>"; };
+		9294D43F1FCA1DCE00AF86EA /* 2017CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2017CarData.csv; sourceTree = "<group>"; };
+		9294D4401FCA1DCE00AF86EA /* 2012CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2012CarData.csv; sourceTree = "<group>"; };
+		9294D4411FCA1DCE00AF86EA /* 2013CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2013CarData.csv; sourceTree = "<group>"; };
+		9294D4421FCA1DCE00AF86EA /* 2011CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2011CarData.csv; sourceTree = "<group>"; };
+		9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2015CarData.csv; sourceTree = "<group>"; };
 		92B197551FB68C2E00FB7DAF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPersonalCarViewController.swift; sourceTree = "<group>"; };
 		92B197591FB698ED00FB7DAF /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
@@ -94,6 +110,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9294D43B1FCA1DB300AF86EA /* CarData */ = {
+			isa = PBXGroup;
+			children = (
+				92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */,
+				9294D43F1FCA1DCE00AF86EA /* 2017CarData.csv */,
+				9294D43C1FCA1DCD00AF86EA /* 2016CarData.csv */,
+				9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */,
+				9294D43E1FCA1DCE00AF86EA /* 2014CarData.csv */,
+				9294D4411FCA1DCE00AF86EA /* 2013CarData.csv */,
+				9294D4401FCA1DCE00AF86EA /* 2012CarData.csv */,
+				9294D4421FCA1DCE00AF86EA /* 2011CarData.csv */,
+				9294D43D1FCA1DCE00AF86EA /* 2010CarData.csv */,
+			);
+			path = CarData;
+			sourceTree = "<group>";
+		};
 		92B4F2FB1FB59092006653D6 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +149,7 @@
 		92B4F3061FB59092006653D6 /* E-Car */ = {
 			isa = PBXGroup;
 			children = (
+				9294D43B1FCA1DB300AF86EA /* CarData */,
 				92B4F3071FB59092006653D6 /* AppDelegate.swift */,
 				92B4F3091FB59092006653D6 /* ViewController.swift */,
 				92B4F30B1FB59092006653D6 /* Main.storyboard */,
@@ -130,7 +163,6 @@
 				92B1975F1FB6A42200FB7DAF /* PersonalCar.swift */,
 				92B197611FB6A8E100FB7DAF /* Account.swift */,
 				92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */,
-				92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */,
 				92C0BE121FC9324B006991B9 /* CarYearsTableViewController.swift */,
 				92C0BE101FC91F96006991B9 /* CarYearsTableViewCell.swift */,
 			);
@@ -263,9 +295,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C0BE0D1FC8E1CA006991B9 /* 2018CarData.csv in Resources */,
+				9294D44B1FCA1DCE00AF86EA /* 2015CarData.csv in Resources */,
 				92B4F3121FB59092006653D6 /* LaunchScreen.storyboard in Resources */,
 				92B4F30F1FB59092006653D6 /* Assets.xcassets in Resources */,
+				9294D4471FCA1DCE00AF86EA /* 2017CarData.csv in Resources */,
+				9294D4481FCA1DCE00AF86EA /* 2012CarData.csv in Resources */,
 				92B4F30D1FB59092006653D6 /* Main.storyboard in Resources */,
+				9294D44A1FCA1DCE00AF86EA /* 2011CarData.csv in Resources */,
+				9294D4451FCA1DCE00AF86EA /* 2010CarData.csv in Resources */,
+				9294D4441FCA1DCE00AF86EA /* 2016CarData.csv in Resources */,
+				9294D4461FCA1DCE00AF86EA /* 2014CarData.csv in Resources */,
+				9294D4491FCA1DCE00AF86EA /* 2013CarData.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
