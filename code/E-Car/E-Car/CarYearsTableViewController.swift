@@ -10,14 +10,46 @@ import UIKit
 
 class CarYearsTableViewController: UITableViewController {
 
+    //Array that holds all the years to display (currently 2018-2010 are the only accepted years
     var years = [Int]()
-    
+    var startYear: Int = 2010
+    var endYear: Int = 2018
+    var carList = CarList()
+    var carsForYear = [Car]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 2000 ... 2018 {
+        
+        //populate year array with numbers from 2010 to 2018
+        for i in startYear ... endYear {
             years.append(i)
         }
+        years = years.reversed()
+        /*
+        for year in years {
+            
+        }
+ */
+        var currentYear = 2018
+        var data = readDataFromCSV(fileName: (String(currentYear) + "CarData"), fileType: ".csv")
+        data = cleanRows(file: data!)
+        let csvRows = csv(data: data!)
+        var myCar: Car
+        var start = 0 //used to skip the first row of the table, which is the column headers
+        for columns in csvRows {
+            if start != 0 {
+                if columns[3] != "" || columns[0] != "" || columns[9] != "" || columns[10] != "" || columns[11] != "" || columns[8] != "" || columns[2] != "" || columns[7] != ""{
+                    myCar = Car.init(name: columns[3], year: columns[0], mpgCity: columns[9], mpgHighway: columns[10], mpgAvg: columns[11], transmission: columns[8], brand: columns[2], cylinder: columns[7])
+                    //print(myCar.toString())
+                    carsForYear.append(myCar)
+                }
+                
+            }
+            start = 1
+        } // after here, all of the cars for a given year have been processed / parsed
+        carList.addCar(year: currentYear, carList: carsForYear)
+        //print(uniqueBrands)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,6 +60,39 @@ class CarYearsTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func readDataFromCSV(fileName:String, fileType: String)-> String!{
+        guard let filepath = Bundle.main.path(forResource: fileName, ofType: fileType)
+            else {
+                return nil
+        }
+        do {
+            var contents = try String(contentsOfFile: filepath, encoding: .utf8)
+            contents = cleanRows(file: contents)
+            return contents
+        } catch {
+            print("File Read Error for file \(filepath)")
+            return nil
+        }
+    }
+    func cleanRows(file:String)->String{
+        var cleanFile = file
+        cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
+        cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
+        //        cleanFile = cleanFile.replacingOccurrences(of: ";;", with: "")
+        //        cleanFile = cleanFile.replacingOccurrences(of: ";\n", with: "")
+        return cleanFile
+    }
+    func csv(data: String) -> [[String]] {
+        var result: [[String]] = []
+        let rows = data.components(separatedBy: "\n")
+        for row in rows {
+            let columns = row.components(separatedBy: ",")
+            result.append(columns)
+        }
+        
+        return result
     }
 
     // MARK: - Table view data source
@@ -48,7 +113,6 @@ class CarYearsTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CarYearsTableViewCell else {
             fatalError("The dequeued cell is not an instance of CarYearsTableViewCell")
         }
-        print("here")
         let year = years[indexPath.row]
         // Configure the cell...
         cell.yearLabel.text = String(year)
