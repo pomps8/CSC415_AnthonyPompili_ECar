@@ -125,6 +125,6 @@ class Car {
     }
     
     func toString() -> String {
-        return "brand: " + brand + ", name: " + name + ", year: " + year + ", tramission: " + transmission + ", cylinder: " + cylinder + ", MPGCity: " + mpgCity + ", MPGHighway" + mpgHighway + ", MPGAVG: " + mpgAvg
+        return "brand: " + brand + ", name: " + name + ", year: " + year + ", tramission: " + transmission + ", cylinder: " + cylinder + ", MPGCity: " + mpgCity + ", MPGHighway: " + mpgHighway + ", MPGAVG: " + mpgAvg
     }
 }

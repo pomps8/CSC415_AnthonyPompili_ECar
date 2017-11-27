@@ -1,5 +1,5 @@
 //
-//  CarYearsTableViewController.swift
+//  CarBrandsTableViewController.swift
 //  E-Car
 //
 //  Created by Anthony Pompili on 11/25/17.
@@ -8,24 +8,11 @@
 
 import UIKit
 
-class CarYearsTableViewController: UITableViewController {
+class CarBrandsTableViewController: UITableViewController {
 
-    //Array that holds all the years to display (currently 2018-2010 are the only accepted years
-    var years = [Int]()
-    var startYear: Int = 2010
-    var endYear: Int = 2018
-    var carList = CarList()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //populate year array with numbers from 2010 to 2018
-        for i in startYear ... endYear {
-            years.append(i)
-        }
-        years = years.reversed()
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,37 +24,29 @@ class CarYearsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return years.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cellIdentifier = "CarYearsTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CarYearsTableViewCell else {
-            fatalError("The dequeued cell is not an instance of CarYearsTableViewCell")
-        }
-        let year = years[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
         // Configure the cell...
-        cell.yearLabel.text = String(year)
-        
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Cell selected: \(18 - indexPath.row)" )
-    }
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

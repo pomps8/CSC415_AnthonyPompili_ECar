@@ -9,6 +9,9 @@
 import Foundation
 
 class CarList {
+    
+    var carsForYear = [Car]()
+    var difference = 0
     //Array to hold CarYearList Values
     private var cars = [CarYearList]()
     
@@ -25,7 +28,7 @@ class CarList {
     func addCar(year: Int, carList: [Car]){
         cars.append(CarYearList.init(year: year, carList: carList))
     }
-    
+
 }
 
 //Struct that contains basic structure of a carlist. The basic structure is a "year" and a car list, that the parser in the viewDidLoad() will send this
