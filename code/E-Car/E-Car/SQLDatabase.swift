@@ -37,20 +37,7 @@ class SQLDatabase {
         }
         
         createTable() //create the table after the database is initalized
-        var cars = [Car]()
-        let parser = Parser()
-        for i in startYear ... endYear {
-            years.append(i)
-        }
-       
-        years = years.reversed()
-        for year in years {
-            cars = parser.parseFile(year: year)
-            for car in cars {
-                print(car.toString())
-            }
-            cars.removeAll() //clear out array
-        }
+        
         
         
     }
@@ -73,6 +60,20 @@ class SQLDatabase {
         do {
             try self.database.run(createTable)
             print("Created Table")
+            var cars = [Car]()
+            let parser = Parser()
+            for i in startYear ... endYear {
+                years.append(i)
+            }
+            
+            years = years.reversed()
+            for year in years {
+                cars = parser.parseFile(year: year)
+                for car in cars {
+                    insertCar(car: car) //insert car into database after parsing of each year
+                }
+                cars.removeAll() //clear out array
+            }
         } catch {
             print(error)
         }
@@ -84,7 +85,7 @@ class SQLDatabase {
                                               self.cylinder <- car.getCylinder(), self.mpgCity <- car.getMpgCity(), self.mpgHighway <- car.getMpgHighway(), self.mpgAvg <- car.getMpgAvg(), self.co2 <- car.getCo2())
         do {
             try self.database.run(insertCar) //run the query to the database
-            print("Inserted User")
+            //print("Inserted User")
         } catch {
             print(error)
         }

@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         db = SQLDatabase()
-        
+        db?.listCar()
     }
 
     override func didReceiveMemoryWarning() {
