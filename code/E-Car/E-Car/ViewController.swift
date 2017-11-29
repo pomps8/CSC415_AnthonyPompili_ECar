@@ -8,13 +8,17 @@
 // Loaded when "More" is selected from the initial view controller
 
 import UIKit
-
+import SQLite
 
 class ViewController: UIViewController {
+    
+    var db: SQLDatabase?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        db = SQLDatabase()
         
     }
 
@@ -29,6 +33,6 @@ class ViewController: UIViewController {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    
+
 }
 

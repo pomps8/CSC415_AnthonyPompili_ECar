@@ -10,7 +10,6 @@
 		9294D4441FCA1DCE00AF86EA /* 2016CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43C1FCA1DCD00AF86EA /* 2016CarData.csv */; };
 		9294D4461FCA1DCE00AF86EA /* 2014CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43E1FCA1DCE00AF86EA /* 2014CarData.csv */; };
 		9294D4471FCA1DCE00AF86EA /* 2017CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43F1FCA1DCE00AF86EA /* 2017CarData.csv */; };
-		9294D4491FCA1DCE00AF86EA /* 2013CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D4411FCA1DCE00AF86EA /* 2013CarData.csv */; };
 		9294D44B1FCA1DCE00AF86EA /* 2015CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */; };
 		9294D44D1FCA59C700AF86EA /* CarBrandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294D44C1FCA59C700AF86EA /* CarBrandsTableViewController.swift */; };
 		9294D44F1FCA5A4F00AF86EA /* CarBrandsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294D44E1FCA5A4F00AF86EA /* CarBrandsTableViewCell.swift */; };
@@ -32,6 +31,10 @@
 		92C0BE0D1FC8E1CA006991B9 /* 2018CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */; };
 		92C0BE111FC91F96006991B9 /* CarYearsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C0BE101FC91F96006991B9 /* CarYearsTableViewCell.swift */; };
 		92C0BE131FC9324B006991B9 /* CarYearsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C0BE121FC9324B006991B9 /* CarYearsTableViewController.swift */; };
+		92FDE8E71FCE9AC100CCBB7F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; };
+		92FDE8E81FCE9AF500CCBB7F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; };
+		92FDE8E91FCE9AF500CCBB7F /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92FDE8EE1FCE9F2A00CCBB7F /* SQLDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,13 +52,82 @@
 			remoteGlobalIDString = 92B4F3031FB59092006653D6;
 			remoteInfo = "E-Car";
 		};
+		92FDE8D81FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		92FDE8DA1FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		92FDE8DC1FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		92FDE8DE1FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		92FDE8E01FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		92FDE8E21FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		92FDE8E41FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+		92FDE8EA1FCE9AF500CCBB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		92FDE8EC1FCE9AF600CCBB7F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				92FDE8E91FCE9AF500CCBB7F /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9294D43C1FCA1DCD00AF86EA /* 2016CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2016CarData.csv; sourceTree = "<group>"; };
 		9294D43E1FCA1DCE00AF86EA /* 2014CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2014CarData.csv; sourceTree = "<group>"; };
 		9294D43F1FCA1DCE00AF86EA /* 2017CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2017CarData.csv; sourceTree = "<group>"; };
-		9294D4411FCA1DCE00AF86EA /* 2013CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2013CarData.csv; sourceTree = "<group>"; };
 		9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2015CarData.csv; sourceTree = "<group>"; };
 		9294D44C1FCA59C700AF86EA /* CarBrandsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandsTableViewController.swift; sourceTree = "<group>"; };
 		9294D44E1FCA5A4F00AF86EA /* CarBrandsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandsTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,6 +155,8 @@
 		92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2018CarData.csv; sourceTree = "<group>"; };
 		92C0BE101FC91F96006991B9 /* CarYearsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarYearsTableViewCell.swift; sourceTree = "<group>"; };
 		92C0BE121FC9324B006991B9 /* CarYearsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarYearsTableViewController.swift; sourceTree = "<group>"; };
+		92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92FDE8E81FCE9AF500CCBB7F /* SQLite.framework in Frameworks */,
+				92FDE8E71FCE9AC100CCBB7F /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +194,6 @@
 				9294D43C1FCA1DCD00AF86EA /* 2016CarData.csv */,
 				9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */,
 				9294D43E1FCA1DCE00AF86EA /* 2014CarData.csv */,
-				9294D4411FCA1DCE00AF86EA /* 2013CarData.csv */,
 			);
 			path = CarData;
 			sourceTree = "<group>";
@@ -130,6 +205,8 @@
 				92B4F31B1FB59092006653D6 /* E-CarTests */,
 				92B4F3261FB59093006653D6 /* E-CarUITests */,
 				92B4F3051FB59092006653D6 /* Products */,
+				92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */,
+				92FDE8E61FCE9AC100CCBB7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +242,7 @@
 				9294D44C1FCA59C700AF86EA /* CarBrandsTableViewController.swift */,
 				9294D44E1FCA5A4F00AF86EA /* CarBrandsTableViewCell.swift */,
 				9294D4501FCA5C3D00AF86EA /* Parser.swift */,
+				92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */,
 			);
 			path = "E-Car";
 			sourceTree = "<group>";
@@ -187,6 +265,27 @@
 			path = "E-CarUITests";
 			sourceTree = "<group>";
 		};
+		92FDE8CF1FCE9AB800CCBB7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */,
+				92FDE8DB1FCE9AB800CCBB7F /* SQLiteTests iOS.xctest */,
+				92FDE8DD1FCE9AB800CCBB7F /* SQLite.framework */,
+				92FDE8DF1FCE9AB800CCBB7F /* SQLiteTests Mac.xctest */,
+				92FDE8E11FCE9AB800CCBB7F /* SQLite.framework */,
+				92FDE8E31FCE9AB800CCBB7F /* SQLiteTests tvOS.xctest */,
+				92FDE8E51FCE9AB800CCBB7F /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92FDE8E61FCE9AC100CCBB7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,10 +296,12 @@
 				92B4F3001FB59092006653D6 /* Sources */,
 				92B4F3011FB59092006653D6 /* Frameworks */,
 				92B4F3021FB59092006653D6 /* Resources */,
+				92FDE8EC1FCE9AF600CCBB7F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				92FDE8EB1FCE9AF500CCBB7F /* PBXTargetDependency */,
 			);
 			name = "E-Car";
 			productName = "E-Car";
@@ -280,6 +381,12 @@
 			mainGroup = 92B4F2FB1FB59092006653D6;
 			productRefGroup = 92B4F3051FB59092006653D6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 92FDE8CF1FCE9AB800CCBB7F /* Products */;
+					ProjectRef = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				92B4F3031FB59092006653D6 /* E-Car */,
@@ -288,6 +395,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 92FDE8D81FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92FDE8DB1FCE9AB800CCBB7F /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = 92FDE8DA1FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92FDE8DD1FCE9AB800CCBB7F /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 92FDE8DC1FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92FDE8DF1FCE9AB800CCBB7F /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = 92FDE8DE1FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92FDE8E11FCE9AB800CCBB7F /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 92FDE8E01FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92FDE8E31FCE9AB800CCBB7F /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = 92FDE8E21FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		92FDE8E51FCE9AB800CCBB7F /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 92FDE8E41FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		92B4F3021FB59092006653D6 /* Resources */ = {
@@ -302,7 +461,6 @@
 				92B4F30D1FB59092006653D6 /* Main.storyboard in Resources */,
 				9294D4441FCA1DCE00AF86EA /* 2016CarData.csv in Resources */,
 				9294D4461FCA1DCE00AF86EA /* 2014CarData.csv in Resources */,
-				9294D4491FCA1DCE00AF86EA /* 2013CarData.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +496,7 @@
 				92C0BE131FC9324B006991B9 /* CarYearsTableViewController.swift in Sources */,
 				92B197621FB6A8E100FB7DAF /* Account.swift in Sources */,
 				92B1975E1FB6A0EE00FB7DAF /* Car.swift in Sources */,
+				92FDE8EE1FCE9F2A00CCBB7F /* SQLDatabase.swift in Sources */,
 				92B197601FB6A42200FB7DAF /* PersonalCar.swift in Sources */,
 				92C0BE111FC91F96006991B9 /* CarYearsTableViewCell.swift in Sources */,
 				92B1975A1FB698ED00FB7DAF /* MainMenuController.swift in Sources */,
@@ -372,6 +531,11 @@
 			isa = PBXTargetDependency;
 			target = 92B4F3031FB59092006653D6 /* E-Car */;
 			targetProxy = 92B4F3241FB59093006653D6 /* PBXContainerItemProxy */;
+		};
+		92FDE8EB1FCE9AF500CCBB7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SQLite iOS";
+			targetProxy = 92FDE8EA1FCE9AF500CCBB7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -505,6 +669,7 @@
 		92B4F32D1FB59093006653D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J3978S26L;
@@ -520,6 +685,7 @@
 		92B4F32E1FB59093006653D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J3978S26L;

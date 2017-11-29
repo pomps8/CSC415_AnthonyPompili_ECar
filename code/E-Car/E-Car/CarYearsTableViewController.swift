@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SQLite
 
 class CarYearsTableViewController: UITableViewController {
 
     //Array that holds all the years to display (currently 2018-2010 are the only accepted years
     var years = [Int]()
-    var startYear: Int = 2010
+    var startYear: Int = 2014
     var endYear: Int = 2018
     var carList = CarList()
     
@@ -26,13 +27,13 @@ class CarYearsTableViewController: UITableViewController {
         }
         years = years.reversed()
         
-        var cars = [Car]()
-        let parser = Parser()
-        cars = parser.parseFile(year: 2018)
-        
+        /*
         for c in cars {
             print(c.toString())
         }
+        */
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

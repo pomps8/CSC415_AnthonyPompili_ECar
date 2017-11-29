@@ -30,7 +30,7 @@ class Parser {
                         difference = 0
                     }
                     
-                    myCar = Car.init(name: columns[3 + difference], year: columns[0], mpgCity: columns[9 + difference], mpgHighway: columns[10 + difference], mpgAvg: columns[11 + difference], transmission: columns[8 + difference], brand: columns[2], cylinder: columns[7 + difference])
+                    myCar = Car.init(name: columns[3 + difference], year: columns[0], mpgCity: columns[9 + difference], mpgHighway: columns[10 + difference], mpgAvg: columns[11 + difference], transmission: columns[8 + difference], brand: columns[2], cylinder: columns[7 + difference], co2: columns[154 + difference])
                     
                     //Volvo and Ferrari have a comma in their names, so their n
                     
@@ -43,10 +43,11 @@ class Parser {
         } // after here, all of the cars for a given year have been processed / parsed
         carsForYear = carsForYear.sorted { $0.getBrand() < $1.getBrand()} //sort the cars in each list by Brand name
         
-        
+        /*
         for car in carsForYear {
             print(car.toString())
         }
+        */
         return carsForYear
     }
     
