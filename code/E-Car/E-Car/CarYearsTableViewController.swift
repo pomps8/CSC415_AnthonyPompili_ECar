@@ -26,6 +26,13 @@ class CarYearsTableViewController: UITableViewController {
         }
         years = years.reversed()
         
+        var cars = [Car]()
+        let parser = Parser()
+        cars = parser.parseFile(year: 2018)
+        
+        for c in cars {
+            print(c.toString())
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

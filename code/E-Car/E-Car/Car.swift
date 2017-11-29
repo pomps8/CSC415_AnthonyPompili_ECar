@@ -19,9 +19,10 @@ class Car {
     private var transmission: String = ""
     private var brand: String = ""
     private var cylinder: String = ""
+    private var co2: String = ""
     
     //basic init func to initialize car, data will be pulled from parser in viewDidLoad init file
-    init(name: String, year: String, mpgCity: String, mpgHighway: String, mpgAvg: String, transmission: String, brand: String, cylinder: String){
+    init(name: String, year: String, mpgCity: String, mpgHighway: String, mpgAvg: String, transmission: String, brand: String, cylinder: String, co2: String){
         setName(name: name)
         setYear(year: year)
         setMpgCity(mpgCity: mpgCity)
@@ -30,6 +31,7 @@ class Car {
         setTransmission(transmission: transmission)
         setBrand(brand: brand)
         setCylinder(cylinder: cylinder)
+        setCo2(co2: co2)
     }
     
     func setName(name: String){
@@ -124,7 +126,15 @@ class Car {
         return cylinder
     }
     
+    func setCo2(co2: String){
+        self.co2 = co2
+    }
+    
+    func getCo2() -> String {
+        return co2
+    }
+    
     func toString() -> String {
-        return "brand: " + brand + ", name: " + name + ", year: " + year + ", tramission: " + transmission + ", cylinder: " + cylinder + ", MPGCity: " + mpgCity + ", MPGHighway: " + mpgHighway + ", MPGAVG: " + mpgAvg
+        return "brand: " + brand + ", name: " + name + ", year: " + year + ", tramission: " + transmission + ", cylinder: " + cylinder + ", MPGCity: " + mpgCity + ", MPGHighway: " + mpgHighway + ", MPGAVG: " + mpgAvg + ", CO2: " + co2
     }
 }
