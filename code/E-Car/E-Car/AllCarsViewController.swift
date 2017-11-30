@@ -54,6 +54,7 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
         brands = (db?.getUniqueBrands().sorted())!
         names = (db?.getUniqueName().sorted())!
         transmissions = (db?.getUniqueTransmission().sorted())!
+        cylinders = (db?.getUniqueCylinder().sorted())!
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
