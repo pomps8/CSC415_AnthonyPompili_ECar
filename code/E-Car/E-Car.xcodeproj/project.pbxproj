@@ -26,8 +26,6 @@
 		92B4F31D1FB59092006653D6 /* E_CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B4F31C1FB59092006653D6 /* E_CarTests.swift */; };
 		92B4F3281FB59093006653D6 /* E_CarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B4F3271FB59093006653D6 /* E_CarUITests.swift */; };
 		92C0BE0D1FC8E1CA006991B9 /* 2018CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */; };
-		92C0BE111FC91F96006991B9 /* CarYearsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C0BE101FC91F96006991B9 /* CarYearsTableViewCell.swift */; };
-		92C0BE131FC9324B006991B9 /* CarYearsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C0BE121FC9324B006991B9 /* CarYearsTableViewController.swift */; };
 		92FDE8E71FCE9AC100CCBB7F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; };
 		92FDE8E81FCE9AF500CCBB7F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; };
 		92FDE8E91FCE9AF500CCBB7F /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -148,8 +146,6 @@
 		92B4F3271FB59093006653D6 /* E_CarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_CarUITests.swift; sourceTree = "<group>"; };
 		92B4F3291FB59093006653D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2018CarData.csv; sourceTree = "<group>"; };
-		92C0BE101FC91F96006991B9 /* CarYearsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarYearsTableViewCell.swift; sourceTree = "<group>"; };
-		92C0BE121FC9324B006991B9 /* CarYearsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarYearsTableViewController.swift; sourceTree = "<group>"; };
 		92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLDatabase.swift; sourceTree = "<group>"; };
 		92FDE8EF1FCF8BC900CCBB7F /* AllCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCarsViewController.swift; sourceTree = "<group>"; };
@@ -232,8 +228,6 @@
 				92B1975D1FB6A0EE00FB7DAF /* Car.swift */,
 				92B1975F1FB6A42200FB7DAF /* PersonalCar.swift */,
 				92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */,
-				92C0BE121FC9324B006991B9 /* CarYearsTableViewController.swift */,
-				92C0BE101FC91F96006991B9 /* CarYearsTableViewCell.swift */,
 				9294D4501FCA5C3D00AF86EA /* Parser.swift */,
 				92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */,
 				92FDE8EF1FCF8BC900CCBB7F /* AllCarsViewController.swift */,
@@ -486,11 +480,9 @@
 				9294D4511FCA5C3D00AF86EA /* Parser.swift in Sources */,
 				92B4F3081FB59092006653D6 /* AppDelegate.swift in Sources */,
 				92FDE8F01FCF8BC900CCBB7F /* AllCarsViewController.swift in Sources */,
-				92C0BE131FC9324B006991B9 /* CarYearsTableViewController.swift in Sources */,
 				92B1975E1FB6A0EE00FB7DAF /* Car.swift in Sources */,
 				92FDE8EE1FCE9F2A00CCBB7F /* SQLDatabase.swift in Sources */,
 				92B197601FB6A42200FB7DAF /* PersonalCar.swift in Sources */,
-				92C0BE111FC91F96006991B9 /* CarYearsTableViewCell.swift in Sources */,
 				92B1975A1FB698ED00FB7DAF /* MainMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
