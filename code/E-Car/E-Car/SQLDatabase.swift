@@ -152,4 +152,61 @@ class SQLDatabase {
         }
         return uniqueBrands
     }
+    
+    func getUniqueName() -> [String] {
+        var uniqueNames = [String]()
+        do {
+            let cars = try self.database.prepare(self.carsTable)
+            
+            //simple for loop to print all cars stored in the database and add unique name to list
+            for c in cars {
+                
+                if !uniqueNames.contains(c[self.name]){
+                    uniqueNames.append(c[self.name])
+                }
+                
+            }
+        } catch {
+            print(error)
+        }
+        return uniqueNames
+    }
+    
+    func getUniqueTransmission() -> [String] {
+        var uniqueTransmission = [String]()
+        do {
+            let cars = try self.database.prepare(self.carsTable)
+            
+            //simple for loop to print all cars stored in the database and add unique name to list
+            for c in cars {
+                
+                if !uniqueTransmission.contains(c[self.transmission]){
+                    uniqueTransmission.append(c[self.transmission])
+                }
+                
+            }
+        } catch {
+            print(error)
+        }
+        return uniqueTransmission
+    }
+    
+    func getUniqueCylinder() -> [String] {
+        var uniqueCylinder = [String]()
+        do {
+            let cars = try self.database.prepare(self.carsTable)
+            
+            //simple for loop to print all cars stored in the database and add unique name to list
+            for c in cars {
+                
+                if !uniqueCylinder.contains(c[self.cylinder]){
+                    uniqueCylinder.append(c[self.cylinder])
+                }
+                
+            }
+        } catch {
+            print(error)
+        }
+        return uniqueCylinder
+    }
 }

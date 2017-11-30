@@ -52,6 +52,8 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
         years = years.reversed()
         
         brands = (db?.getUniqueBrands().sorted())!
+        names = (db?.getUniqueName().sorted())!
+        transmissions = (db?.getUniqueTransmission().sorted())!
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -64,6 +66,12 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
             titleOfRow = String(years[row])
         } else if pickerView == brandPickerLabel {
             titleOfRow = brands[row]
+        } else if pickerView == namePickerLabel {
+            titleOfRow = names[row]
+        } else if pickerView == transmissionPickerLabel {
+            titleOfRow = transmissions[row]
+        } else if pickerView == cylinderPickerLabel {
+            titleOfRow = cylinders[row]
         }
         return titleOfRow
     }
@@ -73,6 +81,10 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
         
         if pickerView == brandPickerLabel {
             rows = brands.count
+        } else if pickerView == namePickerLabel {
+            rows = names.count
+        } else if pickerView == transmissionPickerLabel {
+            rows = transmissions.count
         }
         return rows
     }
