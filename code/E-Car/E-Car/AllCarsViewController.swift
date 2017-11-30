@@ -96,4 +96,19 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
     }
+    @IBAction func submitButtonPressed(_ sender: UIButton) {
+        //let selectedYearPicker = pickerData[yearPicker.selectedRow(inComponent:
+        //print(selectedYearPicker)
+        let selectedYear = yearPickerLabel.selectedRow(inComponent: 0)
+        let selectedBrand = brandPickerLabel.selectedRow(inComponent: 0)
+        let selectedName = namePickerLabel.selectedRow(inComponent: 0)
+        let selectedTransmission = transmissionPickerLabel.selectedRow(inComponent: 0)
+        let selectedCylinder = cylinderPickerLabel.selectedRow(inComponent: 0)
+        print(years[selectedYear])
+        print(brands[selectedBrand])
+        print(names[selectedName])
+        print(transmissions[selectedTransmission])
+        print(cylinders[selectedCylinder])
+        
+    }
 }
