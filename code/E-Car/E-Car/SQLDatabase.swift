@@ -107,4 +107,49 @@ class SQLDatabase {
             print(error)
         }
     }
+    
+    func getConn() -> AnySequence<Row>? {
+        var result: AnySequence<Row>?
+        do {
+            result = try self.database.prepare(self.carsTable)
+            return result!
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+    func getForYear(year: Int){
+        do {
+            let cars = try self.database.prepare(self.carsTable)
+            
+            //simple for loop to print all cars stored in the database
+            for c in cars {
+                if c[self.year] == String(year) {
+                    print("id: \(c[self.id]) brand: \(c[self.brand]), name: \(c[self.name]), year: \(c[self.year]), tramission: \(c[self.transmission]), cylinder: \(c[self.cylinder]), MPGCity: \(c[self.mpgCity]), MPGHighway: \(c[self.mpgHighway]), MPGAVG: \(c[self.mpgAvg]), CO2: \(c[self.co2]) ")
+                }
+                
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func getUniqueBrands() -> [String] {
+        var uniqueBrands = [String]()
+        do {
+            let cars = try self.database.prepare(self.carsTable)
+            
+            //simple for loop to print all cars stored in the database and add unique brand to list
+            for c in cars {
+                
+                if !uniqueBrands.contains(c[self.brand]){
+                    uniqueBrands.append(c[self.brand])
+                }
+                
+            }
+        } catch {
+            print(error)
+        }
+        return uniqueBrands
+    }
 }

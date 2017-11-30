@@ -11,8 +11,6 @@
 		9294D4461FCA1DCE00AF86EA /* 2014CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43E1FCA1DCE00AF86EA /* 2014CarData.csv */; };
 		9294D4471FCA1DCE00AF86EA /* 2017CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43F1FCA1DCE00AF86EA /* 2017CarData.csv */; };
 		9294D44B1FCA1DCE00AF86EA /* 2015CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */; };
-		9294D44D1FCA59C700AF86EA /* CarBrandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294D44C1FCA59C700AF86EA /* CarBrandsTableViewController.swift */; };
-		9294D44F1FCA5A4F00AF86EA /* CarBrandsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294D44E1FCA5A4F00AF86EA /* CarBrandsTableViewCell.swift */; };
 		9294D4511FCA5C3D00AF86EA /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294D4501FCA5C3D00AF86EA /* Parser.swift */; };
 		92B197561FB68C2E00FB7DAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197551FB68C2E00FB7DAF /* LoginViewController.swift */; };
 		92B197581FB68E3800FB7DAF /* ViewPersonalCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */; };
@@ -34,6 +32,7 @@
 		92FDE8E81FCE9AF500CCBB7F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; };
 		92FDE8E91FCE9AF500CCBB7F /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92FDE8EE1FCE9F2A00CCBB7F /* SQLDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */; };
+		92FDE8F01FCF8BC900CCBB7F /* AllCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDE8EF1FCF8BC900CCBB7F /* AllCarsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,8 +127,6 @@
 		9294D43E1FCA1DCE00AF86EA /* 2014CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2014CarData.csv; sourceTree = "<group>"; };
 		9294D43F1FCA1DCE00AF86EA /* 2017CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2017CarData.csv; sourceTree = "<group>"; };
 		9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2015CarData.csv; sourceTree = "<group>"; };
-		9294D44C1FCA59C700AF86EA /* CarBrandsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandsTableViewController.swift; sourceTree = "<group>"; };
-		9294D44E1FCA5A4F00AF86EA /* CarBrandsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandsTableViewCell.swift; sourceTree = "<group>"; };
 		9294D4501FCA5C3D00AF86EA /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		92B197551FB68C2E00FB7DAF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPersonalCarViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +152,7 @@
 		92C0BE121FC9324B006991B9 /* CarYearsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarYearsTableViewController.swift; sourceTree = "<group>"; };
 		92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLDatabase.swift; sourceTree = "<group>"; };
+		92FDE8EF1FCF8BC900CCBB7F /* AllCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCarsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,10 +234,9 @@
 				92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */,
 				92C0BE121FC9324B006991B9 /* CarYearsTableViewController.swift */,
 				92C0BE101FC91F96006991B9 /* CarYearsTableViewCell.swift */,
-				9294D44C1FCA59C700AF86EA /* CarBrandsTableViewController.swift */,
-				9294D44E1FCA5A4F00AF86EA /* CarBrandsTableViewCell.swift */,
 				9294D4501FCA5C3D00AF86EA /* Parser.swift */,
 				92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */,
+				92FDE8EF1FCF8BC900CCBB7F /* AllCarsViewController.swift */,
 			);
 			path = "E-Car";
 			sourceTree = "<group>";
@@ -485,11 +482,10 @@
 				92B1975C1FB6A0CD00FB7DAF /* CarList.swift in Sources */,
 				92B197561FB68C2E00FB7DAF /* LoginViewController.swift in Sources */,
 				92B4F30A1FB59092006653D6 /* ViewController.swift in Sources */,
-				9294D44F1FCA5A4F00AF86EA /* CarBrandsTableViewCell.swift in Sources */,
 				92B197581FB68E3800FB7DAF /* ViewPersonalCarViewController.swift in Sources */,
-				9294D44D1FCA59C700AF86EA /* CarBrandsTableViewController.swift in Sources */,
 				9294D4511FCA5C3D00AF86EA /* Parser.swift in Sources */,
 				92B4F3081FB59092006653D6 /* AppDelegate.swift in Sources */,
+				92FDE8F01FCF8BC900CCBB7F /* AllCarsViewController.swift in Sources */,
 				92C0BE131FC9324B006991B9 /* CarYearsTableViewController.swift in Sources */,
 				92B1975E1FB6A0EE00FB7DAF /* Car.swift in Sources */,
 				92FDE8EE1FCE9F2A00CCBB7F /* SQLDatabase.swift in Sources */,

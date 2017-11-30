@@ -91,15 +91,11 @@ class CarYearsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let year = 2000 + (18 - indexPath.row)
-        let getBrands = self.carsTable.filter(self.year == String(year))
+        print("year: \(year)")
         
-        do {
-            //try self.database.
-            //try self.database.run(getBrands)
-        } catch {
-            print(error)
-        }
-        
+
+        //db?.printForYear(year: year)
+        //db?.getForBrand(brand: "Porsche")
     }
     /*
     // Override to support conditional editing of the table view.

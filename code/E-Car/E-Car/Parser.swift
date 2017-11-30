@@ -26,8 +26,12 @@ class Parser {
             if start != 0 {
                 if columns[3] != "" || columns[0] != "" || columns[9] != "" || columns[10] != "" || columns[11] != "" || columns[8] != "" || columns[2] != "" || columns[7] != ""{
                     
+                    //formatting is strange for this brand, skip
+                    if columns[1] == "Roush" {
+                        continue
+                    }
                     //Columns are off by one for Volvo and Ferrari due to comma in their names, we account of this difference here to adjust the respective columns that are effected
-                    if columns[1] == "Volvo" || columns[1] == "Ferrari"{
+                    if columns[1] == "Volvo" || columns[1] == "Ferrari" {
                         difference = 1
                     } else {
                         difference = 0
