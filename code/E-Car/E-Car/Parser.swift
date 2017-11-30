@@ -1,11 +1,14 @@
-//
-//  Parser.swift
-//  E-Car
-//
-//  Created by Anthony Pompili on 11/25/17.
-//  Copyright © 2017 Anthony Pompili. All rights reserved.
-//
-//returns a list of cars for a given year
+// Name: Anthony Pompili
+// Course: CSC 415
+// Semester: Fall 2017
+// Instructor: Dr. Pulimood
+// Project name: E-Car
+// Description: E-Car looks to show Carbon footprint of various cars in use now, from 2014-2018. Additionally,
+// Filename: Parser.swift
+// Description: Parsers specific files in the CarData folder for the app to user. This grades the year, brand, mpg(city, highway, average), and co2 for each car. The primary function returns a list of Car objects to the caller
+// Last modified on: 12/1/2017
+// Copyright © 2017 Anthony Pompili. All rights reserved.
+
 import Foundation
 
 class Parser {
@@ -69,8 +72,6 @@ class Parser {
         var cleanFile = file
         cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
         cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
-        //        cleanFile = cleanFile.replacingOccurrences(of: ";;", with: "")
-        //        cleanFile = cleanFile.replacingOccurrences(of: ";\n", with: "")
         return cleanFile
     }
     func csv(data: String) -> [[String]] {

@@ -1,10 +1,13 @@
-//
-//  CarYearsTableViewController.swift
-//  E-Car
-//
-//  Created by Anthony Pompili on 11/25/17.
-//  Copyright © 2017 Anthony Pompili. All rights reserved.
-//
+// Name: Anthony Pompili
+// Course: CSC 415
+// Semester: Fall 2017
+// Instructor: Dr. Pulimood
+// Project name: E-Car
+// Description: E-Car looks to show Carbon footprint of various cars in use now, from 2014-2018. Additionally,
+// Filename: CarYearsTableViewController.swift
+// Description: ViewController for the car list table, displays data in table to user. 
+// Last modified on: 12/1/2017
+// Copyright © 2017 Anthony Pompili. All rights reserved.
 
 import UIKit
 import SQLite
@@ -16,10 +19,23 @@ class CarYearsTableViewController: UITableViewController {
     var startYear: Int = 2014
     var endYear: Int = 2018
     var carList = CarList()
+    var db: SQLDatabase?
+    var database: Connection! //global variable for database
+    let carsTable = Table("Cars")
+    let id = Expression<Int>("id") //unique id for each car in the database
+    let year = Expression<String>("year")
+    let brand = Expression<String>("brand")
+    let name = Expression<String>("name")
+    let transmission = Expression<String>("transmission")
+    let cylinder = Expression<String>("cylinder")
+    let mpgCity = Expression<String>("mpgCity")
+    let mpgHighway = Expression<String>("mpgHighway")
+    let mpgAvg = Expression<String>("mpgAvg")
+    let co2 = Expression<String>("co2")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        db = SQLDatabase()
         
         //populate year array with numbers from 2010 to 2018
         for i in startYear ... endYear {
@@ -74,7 +90,16 @@ class CarYearsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Cell selected: \(18 - indexPath.row)" )
+        let year = 2000 + (18 - indexPath.row)
+        let getBrands = self.carsTable.filter(self.year == String(year))
+        
+        do {
+            //try self.database.
+            //try self.database.run(getBrands)
+        } catch {
+            print(error)
+        }
+        
     }
     /*
     // Override to support conditional editing of the table view.

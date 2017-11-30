@@ -1,10 +1,13 @@
-//
-//  CarBrandsTableViewController.swift
-//  E-Car
-//
-//  Created by Anthony Pompili on 11/25/17.
-//  Copyright © 2017 Anthony Pompili. All rights reserved.
-//
+// Name: Anthony Pompili
+// Course: CSC 415
+// Semester: Fall 2017
+// Instructor: Dr. Pulimood
+// Project name: E-Car
+// Description: E-Car looks to show Carbon footprint of various cars in use now, from 2014-2018. Additionally,
+// Filename: CarBrandsTableViewController.swift
+// Description: ViewController for the car brand list table, displays data in table to user
+// Last modified on: 12/1/2017
+// Copyright © 2017 Anthony Pompili. All rights reserved.
 
 import UIKit
 

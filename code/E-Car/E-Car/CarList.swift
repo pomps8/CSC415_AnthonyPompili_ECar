@@ -1,11 +1,13 @@
-//
-//  CarList.swift
-//  E-Car
-//
-//  Created by Anthony Pompili on 11/10/17.
-//  Copyright © 2017 Anthony Pompili. All rights reserved.
-//
-//This class will contain all of the cars collected from the EAP website, stored in an array. This array holds a structure called CarYearList, which holds the year and car list for a certain year group of cars.
+// Name: Anthony Pompili
+// Course: CSC 415
+// Semester: Fall 2017
+// Instructor: Dr. Pulimood
+// Project name: E-Car
+// Description: E-Car looks to show Carbon footprint of various cars in use now, from 2014-2018. Additionally,
+// Filename: CarList.swift
+// Description: This class will contain all of the cars collected from the EAP website, stored in an array. This array holds a structure called CarYearList, which holds the year and car list for a certain year group of cars.
+// Last modified on: 12/1/2017
+// Copyright © 2017 Anthony Pompili. All rights reserved.
 import Foundation
 
 class CarList {

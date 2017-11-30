@@ -1,10 +1,13 @@
-//
-//  SQLDatabase.swift
-//  E-Car
-//
-//  Created by Anthony Pompili on 11/29/17.
-//  Copyright © 2017 Anthony Pompili. All rights reserved.
-//
+// Name: Anthony Pompili
+// Course: CSC 415
+// Semester: Fall 2017
+// Instructor: Dr. Pulimood
+// Project name: E-Car
+// Description: E-Car looks to show Carbon footprint of various cars in use now, from 2014-2018. Additionally,
+// Filename: SQLDatabse.swift
+// Description: Creates a connection with the database to store all parsed data + user data for personal car. Table is only created if there is no table with that name yet.
+// Last modified on: 12/1/2017
+// Copyright © 2017 Anthony Pompili. All rights reserved.
 
 import Foundation
 import SQLite
@@ -26,6 +29,7 @@ class SQLDatabase {
     var years = [Int]()
     let startYear: Int = 2014
     let endYear: Int = 2018
+    
     init(){
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true) //create database file if there isn't one
@@ -85,7 +89,6 @@ class SQLDatabase {
                                               self.cylinder <- car.getCylinder(), self.mpgCity <- car.getMpgCity(), self.mpgHighway <- car.getMpgHighway(), self.mpgAvg <- car.getMpgAvg(), self.co2 <- car.getCo2())
         do {
             try self.database.run(insertCar) //run the query to the database
-            //print("Inserted User")
         } catch {
             print(error)
         }
