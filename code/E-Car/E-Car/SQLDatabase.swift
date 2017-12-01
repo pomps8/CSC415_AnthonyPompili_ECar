@@ -8,7 +8,7 @@
 // Description: Creates a connection with the database to store all parsed data + user data for personal car. Table is only created if there is no table with that name yet.
 // Last modified on: 12/1/2017
 // Copyright © 2017 Anthony Pompili. All rights reserved.
-
+// I had assistance developing this module thanks to this video: https://www.youtube.com/watch?v=c4wLS9py1rU&t=2250s on youtube.com
 import Foundation
 import SQLite
 
