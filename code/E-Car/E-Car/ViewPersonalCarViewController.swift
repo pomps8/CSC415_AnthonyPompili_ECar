@@ -13,6 +13,18 @@ import Foundation
 import UIKit
 
 class ViewPersonalCarViewController : UIViewController {
+    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: viewDidLoad()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Personal car view controller to load view to the user's screen
+    //
+    //    Post-condition: View controller is loaded, displays view to user's screen
+    //-----------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
     }
