@@ -14,22 +14,37 @@ import UIKit
 
 class LoginViewController : UIViewController {
     
-    //main funcation for this viewController
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: viewDidLoad()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Application must load into this view for view to load, displays view with
+    //                  the "more info" button on the bottom
+    //
+    //    Post-condition: View controller is loaded, displays view to user's screen
+    //-----------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    //validateAccount takes username and password passed in through the login screen
-    //and checks with database. If the account exists, true is returned, else, false.
-    func validateAccount (username: String, password: String) -> Bool{
-        print("Validating credentials passed...")
-        //check account info
-        
-        return false
-    }
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: loginButtonPressed()
+    //
+    //    Parameters: sender: UIButton; Button tapped on main menu to "log in" user
+    //                          basically bringing them into the main menu
+    //
+    //
+    //    Pre-condition: ViewController must be loaded initally
+    //
+    //    Post-condition: User is brought back to initial screen
+    //-----------------------------------------------------------------------------------------
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         let mainMenuController = storyboard?.instantiateViewController(withIdentifier: "MainMenuController") as! MainMenuController
-        
-        present(mainMenuController, animated: true, completion: nil)
+        present(mainMenuController, animated: true, completion: nil) //present the MainMenuController once the button is selected
     }
 }
+

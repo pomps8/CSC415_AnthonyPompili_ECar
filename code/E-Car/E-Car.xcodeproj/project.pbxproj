@@ -16,7 +16,6 @@
 		92B197561FB68C2E00FB7DAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197551FB68C2E00FB7DAF /* LoginViewController.swift */; };
 		92B197581FB68E3800FB7DAF /* ViewPersonalCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */; };
 		92B1975A1FB698ED00FB7DAF /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197591FB698ED00FB7DAF /* MainMenuController.swift */; };
-		92B1975C1FB6A0CD00FB7DAF /* CarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1975B1FB6A0CD00FB7DAF /* CarList.swift */; };
 		92B1975E1FB6A0EE00FB7DAF /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1975D1FB6A0EE00FB7DAF /* Car.swift */; };
 		92B197601FB6A42200FB7DAF /* PersonalCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1975F1FB6A42200FB7DAF /* PersonalCar.swift */; };
 		92B4F3081FB59092006653D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B4F3071FB59092006653D6 /* AppDelegate.swift */; };
@@ -27,9 +26,9 @@
 		92B4F31D1FB59092006653D6 /* E_CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B4F31C1FB59092006653D6 /* E_CarTests.swift */; };
 		92B4F3281FB59093006653D6 /* E_CarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B4F3271FB59093006653D6 /* E_CarUITests.swift */; };
 		92C0BE0D1FC8E1CA006991B9 /* 2018CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */; };
-		92FDE8E71FCE9AC100CCBB7F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; };
-		92FDE8E81FCE9AF500CCBB7F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; };
-		92FDE8E91FCE9AF500CCBB7F /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92CE9DFD1FD15CE30022B818 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CE9DF01FD15CCF0022B818 /* SQLite.framework */; };
+		92CE9DFE1FD15CEF0022B818 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CE9DF01FD15CCF0022B818 /* SQLite.framework */; };
+		92CE9DFF1FD15CEF0022B818 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 92CE9DF01FD15CCF0022B818 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92FDE8EE1FCE9F2A00CCBB7F /* SQLDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */; };
 		92FDE8F01FCF8BC900CCBB7F /* AllCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FDE8EF1FCF8BC900CCBB7F /* AllCarsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -49,58 +48,58 @@
 			remoteGlobalIDString = 92B4F3031FB59092006653D6;
 			remoteInfo = "E-Car";
 		};
-		92FDE8D81FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+		92CE9DEF1FD15CCF0022B818 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			containerPortal = 92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
 			remoteInfo = "SQLite iOS";
 		};
-		92FDE8DA1FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+		92CE9DF11FD15CCF0022B818 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			containerPortal = 92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
 			remoteInfo = "SQLiteTests iOS";
 		};
-		92FDE8DC1FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+		92CE9DF31FD15CCF0022B818 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			containerPortal = 92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
 			remoteInfo = "SQLite Mac";
 		};
-		92FDE8DE1FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+		92CE9DF51FD15CCF0022B818 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			containerPortal = 92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
 			remoteInfo = "SQLiteTests Mac";
 		};
-		92FDE8E01FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+		92CE9DF71FD15CCF0022B818 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			containerPortal = 92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
 			remoteInfo = "SQLite tvOS";
 		};
-		92FDE8E21FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+		92CE9DF91FD15CCF0022B818 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			containerPortal = 92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
 			remoteInfo = "SQLiteTests tvOS";
 		};
-		92FDE8E41FCE9AB800CCBB7F /* PBXContainerItemProxy */ = {
+		92CE9DFB1FD15CCF0022B818 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			containerPortal = 92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A121AC451CA35C79005A31D1;
 			remoteInfo = "SQLite watchOS";
 		};
-		92FDE8EA1FCE9AF500CCBB7F /* PBXContainerItemProxy */ = {
+		92CE9E001FD15CEF0022B818 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+			containerPortal = 92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
 			remoteInfo = "SQLite iOS";
@@ -114,7 +113,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				92FDE8E91FCE9AF500CCBB7F /* SQLite.framework in Embed Frameworks */,
+				92CE9DFF1FD15CEF0022B818 /* SQLite.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,7 +130,6 @@
 		92B197551FB68C2E00FB7DAF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPersonalCarViewController.swift; sourceTree = "<group>"; };
 		92B197591FB698ED00FB7DAF /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
-		92B1975B1FB6A0CD00FB7DAF /* CarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarList.swift; sourceTree = "<group>"; };
 		92B1975D1FB6A0EE00FB7DAF /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		92B1975F1FB6A42200FB7DAF /* PersonalCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCar.swift; sourceTree = "<group>"; };
 		92B4F3041FB59092006653D6 /* E-Car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-Car.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,7 +146,7 @@
 		92B4F3271FB59093006653D6 /* E_CarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E_CarUITests.swift; sourceTree = "<group>"; };
 		92B4F3291FB59093006653D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C0BE0C1FC8E1C9006991B9 /* 2018CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2018CarData.csv; sourceTree = "<group>"; };
-		92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../Downloads/SQLite.swift-master 2/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLDatabase.swift; sourceTree = "<group>"; };
 		92FDE8EF1FCF8BC900CCBB7F /* AllCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCarsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,8 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92FDE8E81FCE9AF500CCBB7F /* SQLite.framework in Frameworks */,
-				92FDE8E71FCE9AC100CCBB7F /* SQLite.framework in Frameworks */,
+				92CE9DFE1FD15CEF0022B818 /* SQLite.framework in Frameworks */,
+				92CE9DFD1FD15CE30022B818 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +197,7 @@
 				92B4F31B1FB59092006653D6 /* E-CarTests */,
 				92B4F3261FB59093006653D6 /* E-CarUITests */,
 				92B4F3051FB59092006653D6 /* Products */,
-				92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */,
+				92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */,
 				92FDE8E61FCE9AC100CCBB7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -226,7 +224,6 @@
 				92B4F3131FB59092006653D6 /* Info.plist */,
 				92B197551FB68C2E00FB7DAF /* LoginViewController.swift */,
 				92B197591FB698ED00FB7DAF /* MainMenuController.swift */,
-				92B1975B1FB6A0CD00FB7DAF /* CarList.swift */,
 				92B1975D1FB6A0EE00FB7DAF /* Car.swift */,
 				92B1975F1FB6A42200FB7DAF /* PersonalCar.swift */,
 				92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */,
@@ -256,16 +253,16 @@
 			path = "E-CarUITests";
 			sourceTree = "<group>";
 		};
-		92FDE8CF1FCE9AB800CCBB7F /* Products */ = {
+		92CE9DE61FD15CCF0022B818 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */,
-				92FDE8DB1FCE9AB800CCBB7F /* SQLiteTests iOS.xctest */,
-				92FDE8DD1FCE9AB800CCBB7F /* SQLite.framework */,
-				92FDE8DF1FCE9AB800CCBB7F /* SQLiteTests Mac.xctest */,
-				92FDE8E11FCE9AB800CCBB7F /* SQLite.framework */,
-				92FDE8E31FCE9AB800CCBB7F /* SQLiteTests tvOS.xctest */,
-				92FDE8E51FCE9AB800CCBB7F /* SQLite.framework */,
+				92CE9DF01FD15CCF0022B818 /* SQLite.framework */,
+				92CE9DF21FD15CCF0022B818 /* SQLiteTests iOS.xctest */,
+				92CE9DF41FD15CCF0022B818 /* SQLite.framework */,
+				92CE9DF61FD15CCF0022B818 /* SQLiteTests Mac.xctest */,
+				92CE9DF81FD15CCF0022B818 /* SQLite.framework */,
+				92CE9DFA1FD15CCF0022B818 /* SQLiteTests tvOS.xctest */,
+				92CE9DFC1FD15CCF0022B818 /* SQLite.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -292,7 +289,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				92FDE8EB1FCE9AF500CCBB7F /* PBXTargetDependency */,
+				92CE9E011FD15CEF0022B818 /* PBXTargetDependency */,
 			);
 			name = "E-Car";
 			productName = "E-Car";
@@ -374,8 +371,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 92FDE8CF1FCE9AB800CCBB7F /* Products */;
-					ProjectRef = 92FDE8CE1FCE9AB800CCBB7F /* SQLite.xcodeproj */;
+					ProductGroup = 92CE9DE61FD15CCF0022B818 /* Products */;
+					ProjectRef = 92CE9DE51FD15CCF0022B818 /* SQLite.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -388,53 +385,53 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		92FDE8D91FCE9AB800CCBB7F /* SQLite.framework */ = {
+		92CE9DF01FD15CCF0022B818 /* SQLite.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SQLite.framework;
-			remoteRef = 92FDE8D81FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			remoteRef = 92CE9DEF1FD15CCF0022B818 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		92FDE8DB1FCE9AB800CCBB7F /* SQLiteTests iOS.xctest */ = {
+		92CE9DF21FD15CCF0022B818 /* SQLiteTests iOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "SQLiteTests iOS.xctest";
-			remoteRef = 92FDE8DA1FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			remoteRef = 92CE9DF11FD15CCF0022B818 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		92FDE8DD1FCE9AB800CCBB7F /* SQLite.framework */ = {
+		92CE9DF41FD15CCF0022B818 /* SQLite.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SQLite.framework;
-			remoteRef = 92FDE8DC1FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			remoteRef = 92CE9DF31FD15CCF0022B818 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		92FDE8DF1FCE9AB800CCBB7F /* SQLiteTests Mac.xctest */ = {
+		92CE9DF61FD15CCF0022B818 /* SQLiteTests Mac.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "SQLiteTests Mac.xctest";
-			remoteRef = 92FDE8DE1FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			remoteRef = 92CE9DF51FD15CCF0022B818 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		92FDE8E11FCE9AB800CCBB7F /* SQLite.framework */ = {
+		92CE9DF81FD15CCF0022B818 /* SQLite.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SQLite.framework;
-			remoteRef = 92FDE8E01FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			remoteRef = 92CE9DF71FD15CCF0022B818 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		92FDE8E31FCE9AB800CCBB7F /* SQLiteTests tvOS.xctest */ = {
+		92CE9DFA1FD15CCF0022B818 /* SQLiteTests tvOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "SQLiteTests tvOS.xctest";
-			remoteRef = 92FDE8E21FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			remoteRef = 92CE9DF91FD15CCF0022B818 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		92FDE8E51FCE9AB800CCBB7F /* SQLite.framework */ = {
+		92CE9DFC1FD15CCF0022B818 /* SQLite.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SQLite.framework;
-			remoteRef = 92FDE8E41FCE9AB800CCBB7F /* PBXContainerItemProxy */;
+			remoteRef = 92CE9DFB1FD15CCF0022B818 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -476,7 +473,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92B1975C1FB6A0CD00FB7DAF /* CarList.swift in Sources */,
 				92B197561FB68C2E00FB7DAF /* LoginViewController.swift in Sources */,
 				92B4F30A1FB59092006653D6 /* ViewController.swift in Sources */,
 				92B197581FB68E3800FB7DAF /* ViewPersonalCarViewController.swift in Sources */,
@@ -520,10 +516,10 @@
 			target = 92B4F3031FB59092006653D6 /* E-Car */;
 			targetProxy = 92B4F3241FB59093006653D6 /* PBXContainerItemProxy */;
 		};
-		92FDE8EB1FCE9AF500CCBB7F /* PBXTargetDependency */ = {
+		92CE9E011FD15CEF0022B818 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SQLite iOS";
-			targetProxy = 92FDE8EA1FCE9AF500CCBB7F /* PBXContainerItemProxy */;
+			targetProxy = 92CE9E001FD15CEF0022B818 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -23,7 +23,7 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
     var carToSend: Car?
     var startYear: Int = 2014
     var endYear: Int = 2018
-    var carList = CarList()
+    
     var db: SQLDatabase?
     var database: Connection! //global variable for database
     let carsTable = Table("Cars")

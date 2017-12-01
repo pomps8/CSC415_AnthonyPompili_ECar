@@ -14,27 +14,61 @@ import SQLite
 
 class ViewController: UIViewController {
     
-    var db: SQLDatabase?
+    //Global Variables
+    var db: SQLDatabase? //Reference to database to load into application, only creates database if a table with the specfied name doesn't exit
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: viewDidLoad()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Application must load into this view for view to load
+    //
+    //    Post-condition: View controller is loaded, displays view to user's screen
+    //-----------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        db = SQLDatabase()
-        //db?.listCar()
+        db = SQLDatabase() //initialize the database, making sure the table exists.
+        //If it doesn't, its created now
+        
     }
-
+    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: didReceiveMemoryWarning()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Memory low in device
+    //
+    //    Post-condition: Delete resources here (none deleted)
+    //-----------------------------------------------------------------------------------------
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: logoutButtonPressed()
+    //
+    //    Parameters: sender: UIButtonItem; Button tapped on main menu to "log out" user
+    //                          basically bringing the back to the first screen
+    //
+    //
+    //    Pre-condition: ViewController must be loaded
+    //
+    //    Post-condition: User is brought back to initial screen
+    //-----------------------------------------------------------------------------------------
     @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
-        //takes us back to login screen
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-
+    
 }
 

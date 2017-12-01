@@ -13,16 +13,24 @@ import Foundation
 import UIKit
 
 class MainMenuController : UINavigationController {
-    /*
-    @objc func backToInitial(sender: AnyObject) {
-        
-        self.navigationController?.popToRootViewController(animated: false)
-        
-    }
-    */
+    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: viewDidLoad()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Application must load into this view for view to load.
+    //                  Holds the main menu navigationtthat is found on every screen.
+    //                  This is the "back" button on the top bar.
+    //
+    //    Post-condition: View controller is loaded, displays view to user's screen and
+    //                      puts the "back" button for the navigation control on each of
+    //                      the user's screens.
+    //-----------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Backk", style: .done, target: self, action: #selector(self.backToInitial(sender:)))
     }
-    
 }
+
