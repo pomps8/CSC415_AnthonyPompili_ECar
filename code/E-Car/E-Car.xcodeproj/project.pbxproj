@@ -13,6 +13,7 @@
 		9294D4471FCA1DCE00AF86EA /* 2017CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D43F1FCA1DCE00AF86EA /* 2017CarData.csv */; };
 		9294D44B1FCA1DCE00AF86EA /* 2015CarData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */; };
 		9294D4511FCA5C3D00AF86EA /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294D4501FCA5C3D00AF86EA /* Parser.swift */; };
+		92A1B6FD1FD1797900737CE7 /* personalCar.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92A1B6FC1FD1797900737CE7 /* personalCar.plist */; };
 		92B197561FB68C2E00FB7DAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197551FB68C2E00FB7DAF /* LoginViewController.swift */; };
 		92B197581FB68E3800FB7DAF /* ViewPersonalCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */; };
 		92B1975A1FB698ED00FB7DAF /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B197591FB698ED00FB7DAF /* MainMenuController.swift */; };
@@ -127,6 +128,7 @@
 		9294D43F1FCA1DCE00AF86EA /* 2017CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2017CarData.csv; sourceTree = "<group>"; };
 		9294D4431FCA1DCE00AF86EA /* 2015CarData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2015CarData.csv; sourceTree = "<group>"; };
 		9294D4501FCA5C3D00AF86EA /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		92A1B6FC1FD1797900737CE7 /* personalCar.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = personalCar.plist; sourceTree = "<group>"; };
 		92B197551FB68C2E00FB7DAF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92B197571FB68E3800FB7DAF /* ViewPersonalCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPersonalCarViewController.swift; sourceTree = "<group>"; };
 		92B197591FB698ED00FB7DAF /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				92FDE8ED1FCE9F2A00CCBB7F /* SQLDatabase.swift */,
 				92FDE8EF1FCF8BC900CCBB7F /* AllCarsViewController.swift */,
 				92473E2D1FD0E30700DA1BDC /* ViewCarViewController.swift */,
+				92A1B6FC1FD1797900737CE7 /* personalCar.plist */,
 			);
 			path = "E-Car";
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C0BE0D1FC8E1CA006991B9 /* 2018CarData.csv in Resources */,
+				92A1B6FD1FD1797900737CE7 /* personalCar.plist in Resources */,
 				9294D44B1FCA1DCE00AF86EA /* 2015CarData.csv in Resources */,
 				92B4F3121FB59092006653D6 /* LaunchScreen.storyboard in Resources */,
 				92B4F30F1FB59092006653D6 /* Assets.xcassets in Resources */,

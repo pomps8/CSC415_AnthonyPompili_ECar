@@ -14,8 +14,10 @@ import SQLite
 
 class SQLDatabase {
     
+    //Global Variables
     var database: Connection! //global variable for database
-    let carsTable = Table("Cars")
+    let carsTable = Table("Cars") //table holds all cars
+    
     let id = Expression<Int>("id") //unique id for each car in the database
     let year = Expression<String>("year")
     let brand = Expression<String>("brand")
@@ -30,6 +32,17 @@ class SQLDatabase {
     let startYear: Int = 2014
     let endYear: Int = 2018
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: init()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: No database must be active, if there is, no table is made
+    //
+    //    Post-condition: View controller is loaded, displays view to user's screen
+    //-----------------------------------------------------------------------------------------
     init(){
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true) //create database file if there isn't one
@@ -46,6 +59,17 @@ class SQLDatabase {
         
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: createTable()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: creates table with specified rows
+    //
+    //    Post-condition: tables is set up and ready to use
+    //-----------------------------------------------------------------------------------------
     private func createTable() {
         //add the columns to this new table upon creation, setting the "id" attribute as our unique id & primary key
         let createTable = self.carsTable.create { (table) in
@@ -61,6 +85,7 @@ class SQLDatabase {
             table.column(self.co2)
         }
         
+        //try to run create table
         do {
             try self.database.run(createTable)
             print("Created Table")
@@ -83,6 +108,18 @@ class SQLDatabase {
         }
     }
     
+    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: insertCar()
+    //
+    //    Parameters: car: Car
+    //
+    //
+    //    Pre-condition: car must be a valid car
+    //
+    //    Post-condition: added to the list if no erros with database
+    //-----------------------------------------------------------------------------------------
     func insertCar(car: Car){
         //take car data, add it to the table respectively
         let insertCar = self.carsTable.insert(self.year <- car.getYear(), self.brand <- car.getBrand(), self.name <- car.getName(), self.transmission <- car.getTransmission(),
@@ -94,8 +131,18 @@ class SQLDatabase {
         }
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: list()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: must be cars in db
+    //
+    //    Post-condition: all cars are printed to console. Debugging use only
+    //-----------------------------------------------------------------------------------------
     func listCar() {
-        
         do {
             let cars = try self.database.prepare(self.carsTable)
             
@@ -108,16 +155,17 @@ class SQLDatabase {
         }
     }
     
-    func getConn() -> AnySequence<Row>? {
-        var result: AnySequence<Row>?
-        do {
-            result = try self.database.prepare(self.carsTable)
-            return result!
-        } catch {
-            print(error)
-        }
-        return nil
-    }
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getForYear()
+    //
+    //    Parameters: year: Int
+    //
+    //
+    //    Pre-condition: year must be valid
+    //
+    //    Post-condition: get a valid year
+    //-----------------------------------------------------------------------------------------
     func getForYear(year: Int){
         do {
             let cars = try self.database.prepare(self.carsTable)
@@ -134,6 +182,17 @@ class SQLDatabase {
         }
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getUniqueBrands()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Database must be set up
+    //
+    //    Post-condition: list of unique brands is returned
+    //-----------------------------------------------------------------------------------------
     func getUniqueBrands() -> [String] {
         var uniqueBrands = [String]()
         do {
@@ -153,6 +212,17 @@ class SQLDatabase {
         return uniqueBrands
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getUniqueName()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Database must be set up
+    //
+    //    Post-condition: list of unique names is returned
+    //-----------------------------------------------------------------------------------------
     func getUniqueName() -> [String] {
         var uniqueNames = [String]()
         do {
@@ -172,6 +242,17 @@ class SQLDatabase {
         return uniqueNames
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getUniqueTransmission()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Database must be set up
+    //
+    //    Post-condition: list of unique transmissions is returned
+    //-----------------------------------------------------------------------------------------
     func getUniqueTransmission() -> [String] {
         var uniqueTransmission = [String]()
         do {
@@ -191,6 +272,17 @@ class SQLDatabase {
         return uniqueTransmission
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getUniqueCylinder()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Database must be set up
+    //
+    //    Post-condition: list of unique cylinders is returned
+    //-----------------------------------------------------------------------------------------
     func getUniqueCylinder() -> [String] {
         var uniqueCylinder = [String]()
         do {
@@ -210,12 +302,23 @@ class SQLDatabase {
         return uniqueCylinder
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getCar()
+    //
+    //    Parameters: year, brand, name, transmission, cylinder: string //attributes of car to search for
+    //
+    //
+    //    Pre-condition: Database must be set up
+    //
+    //    Post-condition: list of unique brands is returned
+    //-----------------------------------------------------------------------------------------
     func getCar(year: String, brand: String, name: String, transmssion: String, cylinder: String) -> Car?{
         var carToRet: Car? = nil
         let query = self.carsTable.filter(self.year == year && self.brand == brand && self.name == name && self.transmission == transmission && self.cylinder == cylinder)
         do {
             for car  in try self.database.prepare(query) {
-                print("car is deff found")
+                //get first car find and set it equal to global variable to return later
                 carToRet = Car(name: car[self.name], year: car[self.year], mpgCity: car[self.mpgCity], mpgHighway: car[self.mpgHighway], mpgAvg: car[self.mpgAvg], transmission: car[self.transmission], brand: car[self.brand], cylinder: car[self.cylinder], co2: car[self.co2])
                 break
             }
@@ -223,7 +326,43 @@ class SQLDatabase {
             print(error)
             print("not complete")
         }
-        
         return carToRet
+    }
+    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: setPersonalCar()
+    //
+    //    Parameters: year, brand, name, transmission, cylinder: string //attributes of car to search for
+    //
+    //
+    //    Pre-condition: car must exists to use func
+    //
+    //    Post-condition: personal car is set
+    //-----------------------------------------------------------------------------------------
+    func setPersonalCar(year: String, brand: String, name: String, transmssion: String, cylinder: String){
+        print("Set personal car")
+        var carToRet: Car? = nil
+        var row: Int = 0
+        let query = self.carsTable.filter(self.year == year && self.brand == brand && self.name == name && self.transmission == transmission && self.cylinder == cylinder)
+        do {
+            for car  in try self.database.prepare(query) {
+                row = car[self.id]
+                carToRet = Car(name: car[self.name], year: car[self.year], mpgCity: car[self.mpgCity], mpgHighway: car[self.mpgHighway], mpgAvg: car[self.mpgAvg], transmission: car[self.transmission], brand: car[self.brand], cylinder: car[self.cylinder], co2: car[self.co2])
+                break
+            }
+        } catch {
+            print(error)
+            print("not complete")
+        }
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+        let documentDirectory = paths.object(at: 0) as! String
+        
+        let path = documentDirectory.appending("personalCar.plist")
+        let dict: NSMutableDictionary = [:]
+        dict.setObject(String(row), forKey: "PersonalCarId" as NSCopying)
+        dict.write(toFile: path, atomically: false)
+        
+        print("Personal Car row: " + String(row))
     }
 }

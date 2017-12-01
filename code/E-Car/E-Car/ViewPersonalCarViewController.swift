@@ -27,5 +27,7 @@ class ViewPersonalCarViewController : UIViewController {
     //-----------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SQLite
 
 class ViewCarViewController: UIViewController {
 
@@ -34,6 +35,22 @@ class ViewCarViewController: UIViewController {
     var mpgHighwayToDisplay: String?
     var mpgAverageToDisplay: String?
     var co2: String?
+    var carId: Int?
+    
+    var db: SQLDatabase?            //database set up
+    var database: Connection!       //global variable for database connection
+    let carsTable = Table("Cars")   //table to query for cars
+    let id = Expression<Int>("id")  //unique id for each car in the database
+    let year = Expression<String>("year")                   //column for year
+    let brand = Expression<String>("brand")                 //column for brand
+    let name = Expression<String>("name")                   //column for name
+    let transmission = Expression<String>("transmission")   //column for transmission
+    let cylinder = Expression<String>("cylinder")           //column for cylinder
+    let mpgCity = Expression<String>("mpgCity")             //column for mpgCity
+    let mpgHighway = Expression<String>("mpgHighway")       //column for mpgHighway
+    let mpgAvg = Expression<String>("mpgAvg")               //column for mpgAverage
+    let co2db = Expression<String>("co2")                     //column for co2
+    
     
     //-----------------------------------------------------------------------------------------
     //
@@ -48,7 +65,7 @@ class ViewCarViewController: UIViewController {
     //-----------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        db = SQLDatabase() //set up database to use
         //Set labels to values or discriptions + values
         yearLabel.text = yearToDisplay
         brandLabel.text = brandToDisplay
@@ -88,6 +105,7 @@ class ViewCarViewController: UIViewController {
     //    Post-condition: Database is updated with new car data
     //-----------------------------------------------------------------------------------------
     @IBAction func setPersonalCarPressed(_ sender: UIButton) {
+        db?.setPersonalCar(year: yearToDisplay!, brand: brandToDisplay!, name: modelToDisplay!, transmssion: transmissionToDisplay!, cylinder: cylinderToDisplay!)
         self.navigationController?.popToRootViewController(animated: true)
         
     }

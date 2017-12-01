@@ -25,6 +25,7 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
     var carToSend: Car?             //Global car to pass to ViewCarViewController once queried
     var startYear: Int = 2014       //Starting Year
     var endYear: Int = 2018         //Ending Year
+    var myId: Int = 1               //Id of car were looking at
     
     var db: SQLDatabase?            //database set up
     var database: Connection!       //global variable for database connection
@@ -209,6 +210,7 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
             } 
         }
         //Value is good, can go to next screen
+        
         return true
     }
     
