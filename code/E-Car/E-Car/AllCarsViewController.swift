@@ -75,19 +75,43 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
         for i in startYear ... endYear {
             years.append(i)
         }
-        years = years.reversed()
+        years = years.reversed() //flip years to start with 2018 in UIPicker
         
+        //get all unique values in lists to display from database
         brands = (db?.getUniqueBrands().sorted())!
         names = (db?.getUniqueName().sorted())!
         transmissions = (db?.getUniqueTransmission().sorted())!
         cylinders = (db?.getUniqueCylinder().sorted())!
     }
     
-    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: numberOfComponents()
+    //
+    //    Parameters: pickerView: UIPickerView: Int //holds number of columns in the UIPicker (date picker is example of having 3, versus this one, which has 1)
+    //
+    //
+    //    Pre-condition: Must be subclass of: UIPickerViewDataSource, UIPickerViewDelegate
+    //
+    //    Post-condition: Number of columns is set for the UIPickers
+    //-----------------------------------------------------------------------------------------
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: pickerView()
+    //
+    //    Parameters: pickerView: UIPickerView              //Pickerview in view
+    //                          titleForRow row: Int        //row in UIPicker
+    //                          forComponent component: Int //Comonent in UIPicker
+    //
+    //
+    //    Pre-condition: Must be subclass of: UIPickerViewDataSource, UIPickerViewDelegate
+    //
+    //    Post-condition: Names of columns is set for the UIPickers
+    //-----------------------------------------------------------------------------------------
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         var titleOfRow = ""
         if pickerView == yearPickerLabel {
@@ -104,6 +128,19 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
         return titleOfRow
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: pickerView()
+    //
+    //    Parameters: pickerView: UIPickerView              //Pickerview in view
+    //                          titleForRow row: Int        //row in UIPicker
+    //                          forComponent component: Int //Comonent in UIPicker
+    //
+    //
+    //    Pre-condition: Must be subclass of: UIPickerViewDataSource, UIPickerViewDelegate
+    //
+    //    Post-condition: Number of rows is set for the UIPickers
+    //-----------------------------------------------------------------------------------------
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         var rows: Int = years.count
         
@@ -117,42 +154,78 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
         return rows
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-    }
+    //Needed Function when subclass of: UIPickerDataSource, UIPickerViewDelegate, holds no functionality
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {}
+    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: submitButtonPressed()
+    //
+    //    Parameters: sender: UIButton
+    //
+    //
+    //    Pre-condition: Must be selections in all UIPickers (set by default)
+    //
+    //    Post-condition: Data in global variables is set to these values
+    //-----------------------------------------------------------------------------------------
     @IBAction func submitButtonPressed(_ sender: UIButton) {
-        //let selectedYearPicker = pickerData[yearPicker.selectedRow(inComponent:
-        //print(selectedYearPicker)
         selectedYear = yearPickerLabel.selectedRow(inComponent: 0)
         selectedBrand = brandPickerLabel.selectedRow(inComponent: 0)
         selectedName = namePickerLabel.selectedRow(inComponent: 0)
         selectedTransmission = transmissionPickerLabel.selectedRow(inComponent: 0)
         selectedCylinder = cylinderPickerLabel.selectedRow(inComponent: 0)
-        
-        
-        
-        
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: shouldPerformSegue()
+    //
+    //    Parameters: pickerView: withIdentifier: identifier: String //Show segue for going to next view
+    //                              Sender: Any?                     //sender of call
+    //
+    //
+    //    Pre-condition: Must attempt to perform segue to see if we can perform this
+    //
+    //    Post-condition: If true, go to next view, else, stay here and display UIAlert with error
+    //-----------------------------------------------------------------------------------------
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        //Segue to go to ViewCarViewController is called "showCar", so we know which screen were trying to go to here
         if identifier == "showCar" {
+            // query to get car from database
             myCar = db?.getCar(year: String(years[selectedYear]), brand: brands[selectedBrand], name: names[selectedName], transmssion: transmissions[selectedTransmission], cylinder: cylinders[selectedCylinder])
             
+            //make sure myCar has value
             if myCar == nil {
                 print("No car found")
                 
+                //Display allert if no car is found with this data passed in the query
                 let alert = UIAlertController(title: "No Car Found", message: "No Car Found. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 self.present(alert, animated: true, completion: nil)
+                //value is bad, don't go to next screen
                 return false
             } 
         }
+        //Value is good, can go to next screen
         return true
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: prepare()
+    //
+    //    Parameters: for segue: UIStoryboardSegue //Segue to perform, how to get to next screen
+    //                  sender: Any?               //Sender of all
+    //
+    //
+    //    Pre-condition: Must attempt to perform segue to see if we can perform this
+    //
+    //    Post-condition: If true, go to next view, else, stay here and display UIAlert with error
+    //-----------------------------------------------------------------------------------------
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //if the destination is the ViewCarViewController, then send the data from the query
         if let viewCarViewController = segue.destination as? ViewCarViewController {
             viewCarViewController.yearToDisplay = myCar!.getYear()
             viewCarViewController.brandToDisplay = myCar!.getBrand()
@@ -163,9 +236,6 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
             viewCarViewController.mpgHighwayToDisplay = myCar!.getMpgHighway()
             viewCarViewController.mpgAverageToDisplay = myCar!.getMpgAvg()
             viewCarViewController.co2 = myCar!.getCo2()
-            
-           
-           
         }
     }
 }
