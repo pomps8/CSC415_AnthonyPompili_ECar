@@ -20,7 +20,7 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
     var names = [String]()
     var transmissions = [String]()
     var cylinders = [String]()
-    
+    var carToSend: Car?
     var startYear: Int = 2014
     var endYear: Int = 2018
     var carList = CarList()
@@ -37,6 +37,13 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
     let mpgHighway = Expression<String>("mpgHighway")
     let mpgAvg = Expression<String>("mpgAvg")
     let co2 = Expression<String>("co2")
+    var yearHere = ""
+    var selectedYear = 0
+    var selectedBrand = 0
+    var selectedName = 0
+    var selectedTransmission = 0
+    var selectedCylinder = 0
+    var myCar: Car?
     
     @IBOutlet weak var yearPickerLabel: UIPickerView!
     @IBOutlet weak var brandPickerLabel: UIPickerView!
@@ -99,16 +106,49 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         //let selectedYearPicker = pickerData[yearPicker.selectedRow(inComponent:
         //print(selectedYearPicker)
-        let selectedYear = yearPickerLabel.selectedRow(inComponent: 0)
-        let selectedBrand = brandPickerLabel.selectedRow(inComponent: 0)
-        let selectedName = namePickerLabel.selectedRow(inComponent: 0)
-        let selectedTransmission = transmissionPickerLabel.selectedRow(inComponent: 0)
-        let selectedCylinder = cylinderPickerLabel.selectedRow(inComponent: 0)
-        print(years[selectedYear])
-        print(brands[selectedBrand])
-        print(names[selectedName])
-        print(transmissions[selectedTransmission])
-        print(cylinders[selectedCylinder])
+        selectedYear = yearPickerLabel.selectedRow(inComponent: 0)
+        selectedBrand = brandPickerLabel.selectedRow(inComponent: 0)
+        selectedName = namePickerLabel.selectedRow(inComponent: 0)
+        selectedTransmission = transmissionPickerLabel.selectedRow(inComponent: 0)
+        selectedCylinder = cylinderPickerLabel.selectedRow(inComponent: 0)
         
+        
+        
+        
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showCar" {
+            myCar = db?.getCar(year: String(years[selectedYear]), brand: brands[selectedBrand], name: names[selectedName], transmssion: transmissions[selectedTransmission], cylinder: cylinders[selectedCylinder])
+            
+            if myCar == nil {
+                print("No car found")
+                
+                let alert = UIAlertController(title: "No Car Found", message: "No Car Found. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+                return false
+            } 
+        }
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewCarViewController = segue.destination as? ViewCarViewController {
+            viewCarViewController.yearToDisplay = myCar!.getYear()
+            viewCarViewController.brandToDisplay = myCar!.getBrand()
+            viewCarViewController.modelToDisplay = myCar!.getName()
+            viewCarViewController.transmissionToDisplay = myCar!.getTransmission()
+            viewCarViewController.cylinderToDisplay = myCar!.getCylinder()
+            viewCarViewController.mpgCityToDisplay = myCar!.getMpgCity()
+            viewCarViewController.mpgHighwayToDisplay = myCar!.getMpgHighway()
+            viewCarViewController.mpgAverageToDisplay = myCar!.getMpgAvg()
+            viewCarViewController.co2 = myCar!.getCo2()
+            
+           
+           
+        }
     }
 }

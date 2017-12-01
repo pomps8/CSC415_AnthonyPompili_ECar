@@ -209,4 +209,21 @@ class SQLDatabase {
         }
         return uniqueCylinder
     }
+    
+    func getCar(year: String, brand: String, name: String, transmssion: String, cylinder: String) -> Car?{
+        var carToRet: Car? = nil
+        let query = self.carsTable.filter(self.year == year && self.brand == brand && self.name == name && self.transmission == transmission && self.cylinder == cylinder)
+        do {
+            for car  in try self.database.prepare(query) {
+                print("car is deff found")
+                carToRet = Car(name: car[self.name], year: car[self.year], mpgCity: car[self.mpgCity], mpgHighway: car[self.mpgHighway], mpgAvg: car[self.mpgAvg], transmission: car[self.transmission], brand: car[self.brand], cylinder: car[self.cylinder], co2: car[self.co2])
+                break
+            }
+        } catch {
+            print(error)
+            print("not complete")
+        }
+        
+        return carToRet
+    }
 }
