@@ -13,7 +13,16 @@ import Foundation
 import UIKit
 
 class MainMenuController : UINavigationController {
+    /*
+    @objc func backToInitial(sender: AnyObject) {
+        
+        self.navigationController?.popToRootViewController(animated: false)
+        
+    }
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Backk", style: .done, target: self, action: #selector(self.backToInitial(sender:)))
     }
+    
 }
