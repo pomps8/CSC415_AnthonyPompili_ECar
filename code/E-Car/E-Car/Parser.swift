@@ -64,6 +64,9 @@ class Parser {
         
         return carsForYear
     }
+    //=========================================================================================
+    //HELPER FUNCTIONS
+    //=========================================================================================
     
     //-----------------------------------------------------------------------------------------
     //
@@ -73,7 +76,7 @@ class Parser {
     //              fileType: String   //file type to parse
     //
     //
-    //    Pre-condition: File must exist in the project and must be a valid year. Helper function not developed by me
+    //    Pre-condition: File must exist in the project and must be a valid year. Helper function not developed by me.
     //
     //    Post-condition: data from the file is returned in a string.
     //-----------------------------------------------------------------------------------------
@@ -91,12 +94,37 @@ class Parser {
             return nil
         }
     }
+    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: cleanRows()
+    //
+    //    Parameters: file: String //file to clean out
+    //
+    //
+    //    Pre-condition: File must exist in the project and must be a valid year. Helper function not developed by me.
+    //
+    //    Post-condition: data from the file is cleared (get rid of \r returns and replace with \n instead)
+    //-----------------------------------------------------------------------------------------
     func cleanRows(file:String)->String{
         var cleanFile = file
         cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
         cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
         return cleanFile
     }
+    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: csv()
+    //
+    //    Parameters: data: String //data in file, returned in 2D array
+    //
+    //
+    //
+    //    Pre-condition: Data must be non-nil value
+    //
+    //    Post-condition: data from the file is returned in a 2D array.
+    //-----------------------------------------------------------------------------------------
     func csv(data: String) -> [[String]] {
         var result: [[String]] = []
         let rows = data.components(separatedBy: "\n")
@@ -104,7 +132,7 @@ class Parser {
             let columns = row.components(separatedBy: ",")
             result.append(columns)
         }
-        
         return result
     }
+    
 }

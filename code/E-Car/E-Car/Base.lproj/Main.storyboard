@@ -296,7 +296,6 @@
                                 <state key="normal" title="Set Personal Car"/>
                                 <connections>
                                     <action selector="setPersonalCarPressed:" destination="ImS-Lu-Rm6" eventType="touchUpInside" id="2vZ-Cm-T9O"/>
-                                    <action selector="setPresonalCarPressed:" destination="ImS-Lu-Rm6" eventType="touchUpInside" id="g4m-MP-tlq"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Miles" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KI2-ih-iuc">

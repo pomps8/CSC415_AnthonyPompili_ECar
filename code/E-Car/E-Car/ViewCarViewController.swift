@@ -10,6 +10,9 @@ import UIKit
 
 class ViewCarViewController: UIViewController {
 
+    //Global Variables
+    
+    //Outlets for displaying data
     @IBOutlet weak var footprintLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var brandLabel: UILabel!
@@ -20,6 +23,8 @@ class ViewCarViewController: UIViewController {
     @IBOutlet weak var mpgHighwayLabel: UILabel!
     @IBOutlet weak var mpgAverageLabel: UILabel!
     @IBOutlet weak var milesInput: UITextField!
+    
+    //Variables that get data from AllCarsViewController.swift once grabbed from database. Stored here first
     var yearToDisplay: String?
     var brandToDisplay: String?
     var modelToDisplay: String?
@@ -30,9 +35,21 @@ class ViewCarViewController: UIViewController {
     var mpgAverageToDisplay: String?
     var co2: String?
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: viewDidLoad()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Data base data has been passed int
+    //
+    //    Post-condition: All database data is displayed to user's screen
+    //-----------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        //Set labels to values or discriptions + values
         yearLabel.text = yearToDisplay
         brandLabel.text = brandToDisplay
         modelLabel.text = modelToDisplay
@@ -41,27 +58,60 @@ class ViewCarViewController: UIViewController {
         mpgCityLabel.text = "City MPG: " + mpgCityToDisplay!
         mpgHighwayLabel.text = "Highway MPG: " + mpgHighwayToDisplay!
         mpgAverageLabel.text = "Average MPG: " + mpgAverageToDisplay!
-        
-        // Do any additional setup after loading the view.
     }
 
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: didReceiveMemoryWarning()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: Memory low in device
+    //
+    //    Post-condition: Delete resources here (none deleted)
+    //-----------------------------------------------------------------------------------------
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: setPersonalCarPressed()
+    //
+    //    Parameters: sender: UIButton //Button pressed to dismiss back to mainmenu
+    //
+    //
+    //    Pre-condition: Valid data displaying to push to database
+    //
+    //    Post-condition: Database is updated with new car data
+    //-----------------------------------------------------------------------------------------
     @IBAction func setPersonalCarPressed(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
         
     }
     
-    @IBAction func setPresonalCarPressed(_ sender: UIButton) {
-    }
-    
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: calulateFootprintPressed()
+    //
+    //    Parameters: sender: UIButton //Button pressed to dismiss back to mainmenu
+    //
+    //
+    //    Pre-condition: Valid data to calculate footprint
+    //
+    //    Post-condition: Carbon is updated with corresponding data if valid, else a a message "Invalid Data" is displayed
+    //-----------------------------------------------------------------------------------------
     @IBAction func calulateFootprintPressed(_ sender: UIButton) {
         var myMiles = 0
         var result = 0
         if let miles = milesInput.text {
+            //data passed is not a valud number and less than 1000000
+            if Int(miles) == nil || Int(miles)! < 0 || Int(miles)! > 1000000{
+                footprintLabel.text = "Invalid Data"
+                return
+            }
             myMiles = Int(miles)!
         }
         result = myMiles * Int(co2!)!

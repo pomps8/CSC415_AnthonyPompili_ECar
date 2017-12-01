@@ -14,46 +14,62 @@ import UIKit
 import SQLite
 
 class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    //Array that holds all the years to display (currently 2018-2010 are the only accepted years
-    var years = [Int]()
-    var brands = [String]()
-    var names = [String]()
-    var transmissions = [String]()
-    var cylinders = [String]()
-    var carToSend: Car?
-    var startYear: Int = 2014
-    var endYear: Int = 2018
     
-    var db: SQLDatabase?
-    var database: Connection! //global variable for database
-    let carsTable = Table("Cars")
-    let id = Expression<Int>("id") //unique id for each car in the database
-    let year = Expression<String>("year")
-    let brand = Expression<String>("brand")
-    let name = Expression<String>("name")
-    let transmission = Expression<String>("transmission")
-    let cylinder = Expression<String>("cylinder")
-    let mpgCity = Expression<String>("mpgCity")
-    let mpgHighway = Expression<String>("mpgHighway")
-    let mpgAvg = Expression<String>("mpgAvg")
-    let co2 = Expression<String>("co2")
+    
+    //Global Variables
+    var years = [Int]()             //Array that holds all the years to display (currently 2018-2014 are the only accepted years)
+    var brands = [String]()         //Array that holds all the brands to display
+    var names = [String]()          //Array that holds all the names / models to display
+    var transmissions = [String]()  //Array that holds all the transmissions to display
+    var cylinders = [String]()      //Array that holds all the cylinders to display
+    var carToSend: Car?             //Global car to pass to ViewCarViewController once queried
+    var startYear: Int = 2014       //Starting Year
+    var endYear: Int = 2018         //Ending Year
+    
+    var db: SQLDatabase?            //database set up
+    var database: Connection!       //global variable for database connection
+    let carsTable = Table("Cars")   //table to query for cars
+    let id = Expression<Int>("id")  //unique id for each car in the database
+    let year = Expression<String>("year")                   //column for year
+    let brand = Expression<String>("brand")                 //column for brand
+    let name = Expression<String>("name")                   //column for name
+    let transmission = Expression<String>("transmission")   //column for transmission
+    let cylinder = Expression<String>("cylinder")           //column for cylinder
+    let mpgCity = Expression<String>("mpgCity")             //column for mpgCity
+    let mpgHighway = Expression<String>("mpgHighway")       //column for mpgHighway
+    let mpgAvg = Expression<String>("mpgAvg")               //column for mpgAverage
+    let co2 = Expression<String>("co2")                     //column for co2
+    
+    //Data to grab values in UIPickers on screen when the query button is pressed
     var yearHere = ""
     var selectedYear = 0
     var selectedBrand = 0
     var selectedName = 0
     var selectedTransmission = 0
     var selectedCylinder = 0
-    var myCar: Car?
+    var myCar: Car? //car object to hold data that was queried
     
+    //UIPickers to display data on the screen that was collected from the parser
     @IBOutlet weak var yearPickerLabel: UIPickerView!
     @IBOutlet weak var brandPickerLabel: UIPickerView!
     @IBOutlet weak var namePickerLabel: UIPickerView!
     @IBOutlet weak var transmissionPickerLabel: UIPickerView!
     @IBOutlet weak var cylinderPickerLabel: UIPickerView!
     
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: viewDidLoad()
+    //
+    //    Parameters: none
+    //
+    //
+    //    Pre-condition: View must grab all data from database to display it
+    //
+    //    Post-condition: All data is displayed to the user's screen
+    //-----------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        db = SQLDatabase()
+        db = SQLDatabase() //set up database to use
         
         //populate year array with numbers from 2010 to 2018
         for i in startYear ... endYear {
@@ -66,6 +82,7 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
         transmissions = (db?.getUniqueTransmission().sorted())!
         cylinders = (db?.getUniqueCylinder().sorted())!
     }
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
