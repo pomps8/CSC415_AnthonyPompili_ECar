@@ -421,7 +421,7 @@ class SQLDatabase {
             print(error)
         }
             
-            let updateCar = theCar.update(self.id <- 1, self.name <- (carToRet?.getName())!, self.year <- (carToRet?.getYear())!, self.mpgCity <- (carToRet?.getMpgCity())!, self.mpgHighway <- (carToRet?.getMpgHighway())!, self.mpgAvg <- (carToRet?.getMpgAvg())!, self.transmission <- (carToRet?.getTransmission())!, self.brand <- (carToRet?.getBrand())!, self.cylinder <- (carToRet?.getCylinder())!, self.co2 <- (carToRet?.getCo2())!)
+            let updateCar = theCar.update( self.name <- (carToRet?.getName())!, self.year <- (carToRet?.getYear())!, self.mpgCity <- (carToRet?.getMpgCity())!, self.mpgHighway <- (carToRet?.getMpgHighway())!, self.mpgAvg <- (carToRet?.getMpgAvg())!, self.transmission <- (carToRet?.getTransmission())!, self.brand <- (carToRet?.getBrand())!, self.cylinder <- (carToRet?.getCylinder())!, self.co2 <- (carToRet?.getCo2())!)
             do {
                 try self.personalDatabase.run(updateCar)
             } catch {

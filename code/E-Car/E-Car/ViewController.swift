@@ -94,7 +94,7 @@ class ViewController: UIViewController {
                 print("No car found")
                 
                 //Display allert if no car is found with this data passed in the query
-                let alert = UIAlertController(title: "No Personal Car Set", message: "Please set perosnal car", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "No Personal Car Set", message: "Please set personal car", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
                     alert.dismiss(animated: true, completion: nil)
                 }))
