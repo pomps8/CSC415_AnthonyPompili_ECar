@@ -16,7 +16,11 @@ class SQLDatabase {
     
     //Global Variables
     var database: Connection! //global variable for database
+    var personalDatabase: Connection! //global variable for personal database
+    
+    
     let carsTable = Table("Cars") //table holds all cars
+    let personalCarTable = Table("PersonalCar")
     
     let id = Expression<Int>("id") //unique id for each car in the database
     let year = Expression<String>("year")
@@ -55,8 +59,16 @@ class SQLDatabase {
         
         createTable() //create the table after the database is initalized
         
+        do {
+            let documentDirectory1 = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true) //create database file if there isn't one
+            let fileUrl1 = documentDirectory1.appendingPathComponent("PersonalCar").appendingPathExtension("sqlite3") //recomended by Github page for SQLite README.rd with name "Cars.sqlite3"
+            let personalDatabase = try Connection(fileUrl1.path) //set up database to the path created in the line above, creates connection to save data to this file
+            self.personalDatabase = personalDatabase
+        } catch {
+            print(error)
+        }
         
-        
+        createPersonalCarTable()
     }
     
     //-----------------------------------------------------------------------------------------
@@ -106,9 +118,34 @@ class SQLDatabase {
         } catch {
             print(error)
         }
+        
+        
     }
     
-    
+    private func createPersonalCarTable() {
+        //add the columns to this new table upon creation, setting the "id" attribute as our unique id & primary key
+        let createTable = self.personalCarTable.create { (table) in
+            table.column(self.id, primaryKey: true)
+            table.column(self.year)
+            table.column(self.brand)
+            table.column(self.name)
+            table.column(self.transmission)
+            table.column(self.cylinder)
+            table.column(self.mpgCity)
+            table.column(self.mpgHighway)
+            table.column(self.mpgAvg)
+            table.column(self.co2)
+        }
+        
+        //try to run create table
+        do {
+            try self.personalDatabase.run(createTable)
+            print("Created Personal Car Table")
+            
+        } catch {
+            print(error)
+        }
+    }
     //-----------------------------------------------------------------------------------------
     //
     //  Function: insertCar()
@@ -329,6 +366,25 @@ class SQLDatabase {
         return carToRet
     }
     
+    func getPersonalCar() -> Car?{
+        var carToRet: Car?
+        let query = self.personalCarTable.filter(self.id == 1)
+        do {
+            for car  in try self.personalDatabase.prepare(query) {
+                //get first car find and set it equal to global variable to return later
+                carToRet = Car(name: car[self.name], year: car[self.year], mpgCity: car[self.mpgCity], mpgHighway: car[self.mpgHighway], mpgAvg: car[self.mpgAvg], transmission: car[self.transmission], brand: car[self.brand], cylinder: car[self.cylinder], co2: car[self.co2])
+                print("Car: " + (carToRet?.toString())!)
+                break
+            }
+        } catch {
+            print(error)
+            
+        }
+        return carToRet
+    }
+    
+    
+    
     //-----------------------------------------------------------------------------------------
     //
     //  Function: setPersonalCar()
@@ -341,13 +397,12 @@ class SQLDatabase {
     //    Post-condition: personal car is set
     //-----------------------------------------------------------------------------------------
     func setPersonalCar(year: String, brand: String, name: String, transmssion: String, cylinder: String){
-        print("Set personal car")
+        
         var carToRet: Car? = nil
         var row: Int = 0
         let query = self.carsTable.filter(self.year == year && self.brand == brand && self.name == name && self.transmission == transmission && self.cylinder == cylinder)
         do {
             for car  in try self.database.prepare(query) {
-                row = car[self.id]
                 carToRet = Car(name: car[self.name], year: car[self.year], mpgCity: car[self.mpgCity], mpgHighway: car[self.mpgHighway], mpgAvg: car[self.mpgAvg], transmission: car[self.transmission], brand: car[self.brand], cylinder: car[self.cylinder], co2: car[self.co2])
                 break
             }
@@ -355,14 +410,24 @@ class SQLDatabase {
             print(error)
             print("not complete")
         }
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
-        let documentDirectory = paths.object(at: 0) as! String
         
-        let path = documentDirectory.appending("personalCar.plist")
-        let dict: NSMutableDictionary = [:]
-        dict.setObject(String(row), forKey: "PersonalCarId" as NSCopying)
-        dict.write(toFile: path, atomically: false)
+     
+        let theCar = self.personalCarTable.filter(self.id == 1)
+        let deleteCar = theCar.delete()
         
-        print("Personal Car row: " + String(row))
+        do {
+            try self.personalDatabase.run(deleteCar)
+        } catch {
+            print(error)
+        }
+            
+            let updateCar = theCar.update(self.id <- 1, self.name <- (carToRet?.getName())!, self.year <- (carToRet?.getYear())!, self.mpgCity <- (carToRet?.getMpgCity())!, self.mpgHighway <- (carToRet?.getMpgHighway())!, self.mpgAvg <- (carToRet?.getMpgAvg())!, self.transmission <- (carToRet?.getTransmission())!, self.brand <- (carToRet?.getBrand())!, self.cylinder <- (carToRet?.getCylinder())!, self.co2 <- (carToRet?.getCo2())!)
+            do {
+                try self.personalDatabase.run(updateCar)
+            } catch {
+                print(error)
+                
+            }
+        
     }
 }

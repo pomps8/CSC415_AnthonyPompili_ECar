@@ -84,7 +84,7 @@
                                     <color key="titleColor" red="0.42352941179999998" green="0.51372549020000002" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kbr-cR-Axp" kind="show" id="0uE-9e-b0I"/>
+                                    <segue destination="ImS-Lu-Rm6" kind="show" identifier="showPersonalCar" id="VKF-aB-3kJ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainScreenLogo" translatesAutoresizingMaskIntoConstraints="NO" id="SC8-cX-3Qc">
@@ -224,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0p-SF-NBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="123"/>
+            <point key="canvasLocation" x="1767" y="689"/>
         </scene>
         <!--View Car View Controller-->
         <scene sceneID="3gV-NE-UH6">
@@ -341,21 +341,6 @@
             </objects>
             <point key="canvasLocation" x="2630.434782608696" y="121.46739130434784"/>
         </scene>
-        <!--View Personal Car View Controller-->
-        <scene sceneID="H56-mZ-VZ7">
-            <objects>
-                <viewController storyboardIdentifier="ViewPersonalCarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbr-cR-Axp" customClass="ViewPersonalCarViewController" customModule="E_Car" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t3k-eQ-qRX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.7843137255" green="0.83137254900000002" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="DrU-8n-hNM"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Q8-jq-ewo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1711" y="-547"/>
-        </scene>
         <!--Main Menu Controller-->
         <scene sceneID="ymm-LO-tRQ">
             <objects>
@@ -378,4 +363,7 @@
     <resources>
         <image name="mainScreenLogo" width="362" height="258"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VKF-aB-3kJ"/>
+    </inferredMetricsTieBreakers>
 </document>
