@@ -314,7 +314,7 @@ class SQLDatabase {
     //    Post-condition: list of unique brands is returned
     //-----------------------------------------------------------------------------------------
     func getCar(year: String, brand: String, name: String, transmssion: String, cylinder: String) -> Car?{
-        var carToRet: Car? = nil
+        var carToRet: Car?
         let query = self.carsTable.filter(self.year == year && self.brand == brand && self.name == name && self.transmission == transmission && self.cylinder == cylinder)
         do {
             for car  in try self.database.prepare(query) {

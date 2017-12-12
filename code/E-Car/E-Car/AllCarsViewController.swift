@@ -83,6 +83,8 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
         names = (db?.getUniqueName().sorted())!
         transmissions = (db?.getUniqueTransmission().sorted())!
         cylinders = (db?.getUniqueCylinder().sorted())!
+        
+        
     }
     
     //-----------------------------------------------------------------------------------------
@@ -175,6 +177,10 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
         selectedName = namePickerLabel.selectedRow(inComponent: 0)
         selectedTransmission = transmissionPickerLabel.selectedRow(inComponent: 0)
         selectedCylinder = cylinderPickerLabel.selectedRow(inComponent: 0)
+        
+        print("in submit")
+        print(years[selectedYear])
+        print(brands[selectedBrand])
     }
     
     //-----------------------------------------------------------------------------------------
@@ -190,11 +196,17 @@ class AllCarsViewController : UIViewController, UIPickerViewDataSource, UIPicker
     //    Post-condition: If true, go to next view, else, stay here and display UIAlert with error
     //-----------------------------------------------------------------------------------------
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        print("BOYYYYYYYYYYYYYYASDFADSFASDFASD;FJAS;LDFJA;SLDJF;ALSDKJF;ALSDFJA;SLKDJF")
+        selectedYear = yearPickerLabel.selectedRow(inComponent: 0)
+        selectedBrand = brandPickerLabel.selectedRow(inComponent: 0)
+        selectedName = namePickerLabel.selectedRow(inComponent: 0)
+        selectedTransmission = transmissionPickerLabel.selectedRow(inComponent: 0)
+        selectedCylinder = cylinderPickerLabel.selectedRow(inComponent: 0)
         //Segue to go to ViewCarViewController is called "showCar", so we know which screen were trying to go to here
         if identifier == "showCar" {
             // query to get car from database
             myCar = db?.getCar(year: String(years[selectedYear]), brand: brands[selectedBrand], name: names[selectedName], transmssion: transmissions[selectedTransmission], cylinder: cylinders[selectedCylinder])
-            
+            print(myCar?.toString())
             //make sure myCar has value
             if myCar == nil {
                 print("No car found")
